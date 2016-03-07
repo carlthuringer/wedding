@@ -9,5 +9,5 @@ exports.config =
       joinTo: 'app.js'
   plugins:
     elmBrunch:
-      # mainModules: [ 'app/Main.elm' ]
+      mainModules: [ 'app/Main.elm' ]
       outputFolder: 'public'

@@ -2,44 +2,47 @@
 module Main where
 
 import Html exposing (..)
-
 import Date exposing (..)
 import Time exposing (..)
+import StartApp.Simple exposing (start)
 
-type alias Model =
-  { date : Date }
+import CountDown exposing (init, Action)
 
-type Change = ClockTick Time
+type alias Model = { countDown : CountDown.Model }
 
-initialState : Model
-initialState = { date = Date.fromTime(0) }
+type Action = CountDown CountDown.Action
 
-view model =
+init : Model
+init = { countDown = CountDown.init }
+
+view : Model -> Html
+view state =
   div [] [
     nav [] [
       ul [] [
-        li [] [ text ("Current Time: " ++ toString (Date.toTime model.date)) ],
-        li [] [ text "Item 2" ]
+        li [] [ text "Menu 1" ],
+        li [] [ text "Item 6" ]
       ]
     ],
-    h1 [] [ text "Carl & Nicole Thuringer"],
-    article [] [
-      p [] [ text "Just testing this all out, figuring out how it will work." ]
+    section [] [
+      h1 [] [ text "Carl Thuringer & Nicole Cammarata"],
+      article [] [
+        h2 [] [ CountDown.view state.countDown ],
+        h3 [] [ text "Until they get married!" ]
+      ]
     ]
   ]
 
-tick : Change -> Model -> Model
-tick change model =
-  case change of
-    ClockTick time -> { model | date = Date.fromTime(time) }
+update : Action -> Model -> Model
+update action model =
+  case action of
+    CountDown act -> { model | countDown = CountDown.update act model.countDown }
 
-changes : Signal Change
-changes = Signal.map ClockTick clock
-
-clock : Signal Time
-clock = Time.every Time.second
+changes : Signal Action
+changes = Signal.mergeMany
+  [ Signal.map CountDown CountDown.changes ]
 
 state : Signal Model
-state = Signal.foldp tick initialState changes
+state = Signal.foldp update init changes
 
 main = Signal.map view state

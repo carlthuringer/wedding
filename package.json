@@ -13,11 +13,13 @@
     "start": "brunch watch --server"
   },
   "dependencies": {
-    "auto-reload-brunch": "^2.0.0",
+    "auto-reload-brunch": "^2.1.0",
+    "bootstrap": "^3.3.6",
     "clean-css-brunch": "^2.0.0",
     "css-brunch": "^2.0.0",
     "elm-brunch": "^0.4.4",
     "javascript-brunch": "^2.0.0",
+    "jquery": "^2.2.2",
     "uglify-js-brunch": "^2.0.1"
   }
 }

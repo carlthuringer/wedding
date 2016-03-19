@@ -18,10 +18,19 @@
   <script type="text/javascript" src="main.js"></script>
 </head>
 
-<body></body>
+<body style="padding-top: 50px"></body>
 
 <script type="text/javascript">
-  var app = Elm.fullscreen(Elm.Main);
+  var app = Elm.fullscreen(Elm.Main, {
+    hostClock: currentTime()
+  });
+  sendTime();
+
+  function currentTime() { return (new Date()).valueOf() };
+  function sendTime() {
+    app.ports.hostClock.send(currentTime());
+    requestAnimationFrame(sendTime);
+  }
 </script>
 
 </html>

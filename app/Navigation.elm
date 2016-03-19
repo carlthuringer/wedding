@@ -1,0 +1,46 @@
+module Navigation where
+
+import Html exposing (..)
+import Html.Attributes exposing (..)
+
+view : Html
+view =
+  nav [
+    classList [
+      ("navbar", True),
+      ("navbar-inverse", True),
+      ("navbar-fixed-top", True)
+    ]
+  ] [
+    div [ class "container" ] [
+      div [ class "navbar-header" ] [
+        button [
+          type' "button",
+          classList [
+            ("navbar-toggle", True),
+            ("collapsed", True)
+          ],
+          attribute "data-toggle" "collapse",
+          attribute "data-target" "#navbar",
+          attribute "aria-expanded" "false",
+          attribute "aria-controls" "navbar"
+        ] [
+          span [ class "sr-only" ] [ text "Toggle navigation" ],
+          span [ class "icon-bar" ] [],
+          span [ class "icon-bar" ] [],
+          span [ class "icon-bar" ] []
+        ],
+        a [ class "navbar-brand", href "#" ] [ text "C&N"]
+      ],
+      div [
+        id "navbar",
+        classList [
+          ("navbar-collapse", True),
+          ("collapse", True)
+        ],
+        attribute "aria-expanded" "false"
+      ] [ ul [ classList [ ("nav", True), ("navbar-nav", True) ] ] [
+        li [ classList [ ("active", True) ] ] [ a [ href "#" ] [ text "Home" ] ]
+      ] ]
+    ]
+  ]

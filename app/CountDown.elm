@@ -1,4 +1,4 @@
-module CountDown where
+module CountDown (init, update, view, Model, Action (ClockTick)) where
 
 import Html exposing (..)
 import Date exposing (..)
@@ -12,12 +12,6 @@ type Action = ClockTick Time
 
 init : Model
 init = { date = Date.fromTime(0) }
-
-changes : Signal Action
-changes = Signal.map ClockTick clock
-
-clock : Signal Time
-clock = Time.every Time.second
 
 update : Action -> Model -> Model
 update action model =

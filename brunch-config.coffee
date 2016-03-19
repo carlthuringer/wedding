@@ -1,5 +1,9 @@
 exports.config =
   # See http://brunch.io/#documentation for docs.
+  paths:
+    watched: [
+      'app'
+    ]
   files:
     javascripts: joinTo:
       'libraries.js': /^(?!app\/)/

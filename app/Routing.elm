@@ -1,9 +1,8 @@
-module Routing (router, init, Route (..), Model) where
+module Routing (router, init, view, Route (..), Model) where
 
 import Hop
 import Hop.Types exposing (Router, PathMatcher, Location, newLocation)
 import Hop.Matchers exposing (match1, match2)
-
 
 type Route
   = HomeRoute
@@ -34,3 +33,10 @@ init : Model
 init =
   { location = newLocation
   , route = HomeRoute }
+
+-- view : Model ->
+view model views =
+  case model.route of
+    HomeRoute -> views.home
+    PartyRoute -> views.party
+    NotFoundRoute -> views.notFound

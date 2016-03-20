@@ -2,6 +2,5 @@ module Party where
 
 import Html exposing (..)
 
-view : Html
-view =
+view model =
   text "Party"

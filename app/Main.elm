@@ -14,8 +14,9 @@ import Models exposing (Model)
 import Routing exposing (init, router, Route(NotFoundRoute, HomeRoute))
 
 -- VIEW IMPORTS
-import Home exposing (view)
+import Home
 import Party
+import NotFound
 
 -- ROUTING IMPORTS
 import Hop
@@ -38,18 +39,17 @@ init =
   { countDown = CountDown.init
   , routing = Routing.init }
 
+views =
+  { home = Home.view
+  , party = Party.view
+  , notFound = NotFound.view }
+
 view : Model -> Html
 view model =
   div [] [
     Navigation.view,
-    div [ class "container" ] [ routedView model ] ]
+    div [ class "container" ] [ (Routing.view model.routing views) model ] ]
 
-routedView : Model -> Html
-routedView model =
-  case model.routing.route of
-    HomeRoute -> Home.view model
-    Routing.PartyRoute -> Party.view
-    NotFoundRoute -> p [] [ text "Where are we" ]
 
 update : Action -> Model -> Model
 update action model =
@@ -70,7 +70,6 @@ changes = Signal.mergeMany
 state : Signal Model
 state = Signal.foldp update init changes
 
-type TimeSeconds = Int
 port hostClock : Signal Int
 
 port routeRunTask : Task () ()

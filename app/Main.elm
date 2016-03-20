@@ -7,8 +7,11 @@ import Date exposing (..)
 import Time exposing (..)
 import StartApp.Simple exposing (start)
 
-import CountDown exposing (init, view, Action(ClockTick))
+import CountDown exposing (init, Action(ClockTick))
 import Navigation exposing (view)
+import Home exposing (view)
+import Models exposing (Model)
+import Routing exposing (init, router, Route(NotFoundRoute, HomeRoute))
 
 -- ROUTING IMPORTS
 import Hop
@@ -17,70 +20,44 @@ import Hop.Navigate exposing (navigateTo)
 import Hop.Types exposing (Router, PathMatcher, Location, newLocation)
 import Task exposing (Task)
 
-
-type alias Model =
-  { countDown: CountDown.Model
-  , location: Location
-  , route: Route }
-
 type Action
   = CountDown CountDown.Action
   | TimeUpdate Int
   | ApplyRoute (Route, Location)
 
 -- ROUTING
-type Route
-  = HomeRoute
-  | NotFoundRoute
-
-matcherHome : PathMatcher Route
-matcherHome = match1 HomeRoute "/"
-
-matchers : List (PathMatcher Route)
-matchers =
-  [ matcherHome ]
-
-router : Router Route
-router = Hop.new
-  { matchers = matchers
-  , notFound = NotFoundRoute }
-
 boxedRouterSignal : Signal Action
 boxedRouterSignal = Signal.map ApplyRoute router.signal
 
 init : Model
 init =
   { countDown = CountDown.init
-  , location = newLocation
-  , route = HomeRoute }
+  , routing = Routing.init }
 
 view : Model -> Html
 view model =
-  case model.route of
-    HomeRoute -> homeView model
-    NotFoundRoute -> p [] [ text "Where are we" ]
-
-homeView : Model -> Html
-homeView model =
   div [] [
     Navigation.view,
-    div [ class "container" ] [
-      div [] [
-        h1 [] [ text "Carl & Nicole"],
-        p [ class "lead" ] [
-          CountDown.view model.countDown,
-          text " Until they get married!"
-        ]
-      ]
-    ]
-  ]
+    div [ class "container" ] [ routedView model ] ]
+
+routedView : Model -> Html
+routedView model =
+  let myModel = model
+  in
+  case model.routing.route of
+    HomeRoute -> Home.view myModel
+    NotFoundRoute -> p [] [ text "Where are we" ]
 
 update : Action -> Model -> Model
 update action model =
   case action of
     CountDown act -> { model | countDown = CountDown.update act model.countDown }
     TimeUpdate timeInt -> { model | countDown = CountDown.update (ClockTick (toFloat timeInt)) model.countDown }
-    ApplyRoute (route, location) -> { model | route = route, location = location }
+    ApplyRoute (route, location) ->
+      let
+        routing = model.routing
+        updateRouting = { routing | route = route, location = location }
+      in { model | routing = updateRouting }
 
 changes : Signal Action
 changes = Signal.mergeMany

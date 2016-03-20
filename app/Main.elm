@@ -9,9 +9,13 @@ import StartApp.Simple exposing (start)
 
 import CountDown exposing (init, Action(ClockTick))
 import Navigation exposing (view)
-import Home exposing (view)
+
 import Models exposing (Model)
 import Routing exposing (init, router, Route(NotFoundRoute, HomeRoute))
+
+-- VIEW IMPORTS
+import Home exposing (view)
+import Party
 
 -- ROUTING IMPORTS
 import Hop
@@ -42,10 +46,9 @@ view model =
 
 routedView : Model -> Html
 routedView model =
-  let myModel = model
-  in
   case model.routing.route of
-    HomeRoute -> Home.view myModel
+    HomeRoute -> Home.view model
+    Routing.PartyRoute -> Party.view
     NotFoundRoute -> p [] [ text "Where are we" ]
 
 update : Action -> Model -> Model
@@ -61,7 +64,8 @@ update action model =
 
 changes : Signal Action
 changes = Signal.mergeMany
-  [ Signal.map TimeUpdate hostClock ]
+  [ Signal.map TimeUpdate hostClock
+  , boxedRouterSignal ]
 
 state : Signal Model
 state = Signal.foldp update init changes

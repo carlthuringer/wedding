@@ -7,14 +7,19 @@ import Hop.Matchers exposing (match1, match2)
 
 type Route
   = HomeRoute
+  | PartyRoute
   | NotFoundRoute
 
 matcherHome : PathMatcher Route
 matcherHome = match1 HomeRoute "/"
 
+matcherParty : PathMatcher Route
+matcherParty = match1 PartyRoute "/party"
+
 matchers : List (PathMatcher Route)
 matchers =
-  [ matcherHome ]
+  [ matcherHome
+  , matcherParty ]
 
 router : Router Route
 router = Hop.new

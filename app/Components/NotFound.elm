@@ -1,4 +1,4 @@
-module NotFound where
+module Components.NotFound where
 
 import Html exposing (text)
 

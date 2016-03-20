@@ -1,11 +1,9 @@
-module Home where
+module Components.Home where
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import CountDown exposing (view)
-import Models exposing (Model)
 
-view : Model -> Html
 view model =
   div [] [
     h1 [] [ text "Carl & Nicole"],

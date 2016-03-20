@@ -1,4 +1,4 @@
-module Routing (router, init, view, Route (..), Model) where
+module Routing where
 
 import Hop
 import Hop.Types exposing (Router, PathMatcher, Location, newLocation)

@@ -1,4 +1,4 @@
-module CountDown (init, update, view, Model, Action (ClockTick)) where
+module CountDown where
 
 import Html exposing (..)
 import Date exposing (..)
@@ -8,16 +8,11 @@ type alias Model = {
   date : Date
 }
 
-type Action = ClockTick Time
-
 init : Model
 init = { date = Date.fromTime(0) }
 
-update : Action -> Model -> Model
-update action model =
-  case action of
-    ClockTick time -> { model | date = Date.fromTime(time) }
-
+update : Int -> Model -> Model
+update time model = { model | date = Date.fromTime(toFloat time) }
 
 monthNumber : Date.Month -> Int
 monthNumber month =

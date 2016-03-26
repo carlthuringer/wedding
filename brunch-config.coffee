@@ -16,6 +16,7 @@ exports.config =
     elmBrunch:
       mainModules: [ 'app/Main.elm' ]
       outputFolder: 'public'
+    sass: "nothing"
   npm:
     globals:
       jQuery: 'jquery'

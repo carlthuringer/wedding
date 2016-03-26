@@ -3,7 +3,6 @@ module Components.Home where
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import CountDown exposing (view)
-import Components.HomeCSS
 
 view model =
   div [] [

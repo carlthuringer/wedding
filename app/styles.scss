@@ -1,0 +1,44 @@
+$rose_gold: rgb(245, 189, 159);
+$peach: rgb(253, 198, 178);
+$serenity_blue: rgb(145, 168, 210);
+$medium_grey: rgb(152, 150, 164);
+$ivory: rgb(229, 225, 223);
+
+body {
+  background-color: $ivory;
+}
+
+.wedding-colors {
+  $size: 128px;
+  display: flex;
+  flex-flow: row wrap;
+  width: $size * 2;
+  height: auto;
+  div {
+    width: $size;
+    height: $size;
+    margin: auto;
+  }
+}
+
+.rose-gold { background-color: $rose_gold }
+.peach { background-color: $peach }
+.serenity-blue { background-color: $serenity_blue }
+.medium-grey { background-color: $medium_grey }
+
+article {
+  padding: 1rem;
+  margin: 1rem;
+  background-color: rgb(210, 210, 210);
+  img {
+    float: right;
+  }
+  ::after {
+      visibility: hidden;
+      display: block;
+      font-size: 0;
+      content: " ";
+      clear: both;
+      height: 0;
+  }
+}

@@ -15,6 +15,8 @@ import Components
 
 import Task exposing (Task)
 
+import WeddingMain exposing (weddingMainFeature)
+
 type Action
   = TimeUpdate Int
   | ApplyRoute (Routing.Route, Hop.Types.Location)
@@ -56,4 +58,8 @@ port hostClock : Signal Int
 port routeRunTask : Task () ()
 port routeRunTask = router.run
 
-main = Signal.map view model
+main : Signal Html
+main = weddingMainFeature.html
+-- main = Signal.map view model
+
+-- REARCHITECTURE

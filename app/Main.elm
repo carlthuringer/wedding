@@ -1,65 +1,95 @@
 -- Main file
-module Main where
 
-import Html exposing (..)
-import Html.Attributes exposing (..)
 
+module Main (..) where
+
+import Html exposing (Html, div)
+import Html.Attributes exposing (class)
 import CountDown
 import Navigation
-
 import Routing exposing (router)
 import Hop.Types
+import StartApp exposing (App, start)
+import Effects exposing (Effects)
 
--- VIEW IMPORTS
 import Components
-
 import Task exposing (Task)
-
-import WeddingMain exposing (weddingMainFeature)
 
 type Action
   = TimeUpdate Int
-  | ApplyRoute (Routing.Route, Hop.Types.Location)
+  | ApplyRoute ( Routing.Route, Hop.Types.Location )
+
 
 type alias Model =
-  { countDown: CountDown.Model
-  , routing: Routing.Model }
+  { countDown : CountDown.Model
+  , routing : Routing.Model
+  }
 
-init : Model
+
+init : ( Model, Effects Action )
 init =
-  { countDown = CountDown.init
-  , routing = Routing.init }
+  ( { countDown = CountDown.init
+    , routing = Routing.init
+    }
+  , Effects.none
+  )
 
-view : Model -> Html
-view model =
-  div [] [
-    Navigation.view,
-    div [ class "container" ] [ (Routing.view model.routing Components.views) model ] ]
 
-update : Action -> Model -> Model
+view : Signal.Address Action -> Model -> Html
+view address model =
+  div
+    []
+    [ Navigation.view
+    , div [ class "container" ] [ (Routing.view model.routing Components.views) model ]
+    ]
+
+
+update : Action -> Model -> ( Model, Effects Action )
 update action model =
   case action of
-    TimeUpdate timeInt -> { model | countDown = CountDown.update timeInt model.countDown }
-    ApplyRoute (route, location) ->
+    TimeUpdate timeInt ->
       let
-        routing = model.routing
-        updateRouting = { routing | route = route, location = location }
-      in { model | routing = updateRouting }
+        setCountdown =
+          { model | countDown = CountDown.update timeInt model.countDown }
+      in
+        ( setCountdown, Effects.none )
 
-model : Signal Model
-model = let
-  signals = Signal.mergeMany
-    [ Signal.map TimeUpdate hostClock
-    , Signal.map ApplyRoute router.signal ]
-  in Signal.foldp update init signals
+    ApplyRoute ( route, location ) ->
+      let
+        routing =
+          model.routing
+
+        updateRouting =
+          { routing | route = route, location = location }
+      in
+        ( { model | routing = updateRouting }, Effects.none )
 
 port hostClock : Signal Int
-
 port routeRunTask : Task () ()
-port routeRunTask = router.run
+port routeRunTask =
+  router.run
+
+
+routerSignal : Signal Action
+routerSignal =
+  Signal.map ApplyRoute router.signal
+
+
+timeSignal : Signal Action
+timeSignal =
+  Signal.map TimeUpdate hostClock
+
+
+app : App Model
+app =
+  start
+    { init = init
+    , update = update
+    , view = view
+    , inputs = [ routerSignal, timeSignal ]
+    }
+
 
 main : Signal Html
-main = weddingMainFeature.html
--- main = Signal.map view model
-
--- REARCHITECTURE
+main =
+  app.html

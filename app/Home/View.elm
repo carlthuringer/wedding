@@ -3,7 +3,8 @@ module Home.View where
 import Html exposing (..)
 import Html.Attributes exposing (..)
 
-view address action =
+view : Html
+view =
   div [] [
     h1 [] [ text "Carl & Nicole"],
     div [ class "wedding-colors" ] [

@@ -3,6 +3,7 @@ module CountDown where
 import Html exposing (..)
 import Date exposing (..)
 import Time exposing (..)
+import Debug
 
 type alias Model = {
   date : Date
@@ -47,8 +48,9 @@ daysInMonth month =
     Dec -> 31.0
 
 weddingTime : Date
-weddingTime = Date.fromString "2017-06-03 21:00:00"
-  |> Result.withDefault (Date.fromTime 0)
+weddingTime =
+  Date.fromString "2017-06-03"
+    |> Result.withDefault(Date.fromTime 0)
 
 toUnixSeconds : Date -> Float
 toUnixSeconds date =

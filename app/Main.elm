@@ -1,6 +1,4 @@
 -- Main file
-
-
 module Main (..) where
 
 import Html exposing (Html, div)

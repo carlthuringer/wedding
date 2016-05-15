@@ -39,9 +39,11 @@ view =
           ("collapse", True)
         ],
         attribute "aria-expanded" "false"
-      ] [ ul [ classList [ ("nav", True), ("navbar-nav", True) ] ] [
-        li [ classList [ ("active", False) ] ] [ a [ href "#/" ] [ text "Home" ] ],
-        li [ classList [ ("active", False) ] ] [ a [ href "#/party" ] [ text "Party" ] ]
-      ] ]
+      ] [ ul [ classList [ ("nav", True), ("navbar-nav", True) ] ]
+            [ li [ classList [ ("active", False) ] ] [ a [ href "#/" ] [ text "Home" ] ]
+            , li [ classList [ ("active", False) ] ] [ a [ href "#/party" ] [ text "Party" ] ]
+            , li [ classList [ ("active", False) ] ] [ a [ href "#/venue" ] [ text "Venue" ] ]
+            ]
+        ]
     ]
   ]

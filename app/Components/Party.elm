@@ -12,6 +12,7 @@ view model = div [ id "party" ]
   , partyMember "Joanna Nichols" "placeholder" joanna
   , partyMember "Kate Slingerland" "placeholder" kate
   , partyMember "Carolyn Radville" "placeholder" carolyn
+  , partyMember "Beth Lula" "placeholder" beth
   , h3 [] [ text "Groom's Party" ]
   , partyMember "Brian Thuringer" "placeholder" brian
   , partyMember "Scott McAnally" "placeholder" scott
@@ -151,6 +152,15 @@ usque siqua, scelerata pars gentes, cuspis hoc Tonanti terras, retexite. Solis
 accipiunt stabula soporem perire date natae sequiturque omnis quidem Iovis et
 terrore septem obnoxia Troiaeque. Pro invida arbitrium Dianae qua vidit Cyclopis
 bracchiaque Pentheus sine, ille inpune virum Pallorque sui victoremque.
+"""
+
+beth = toHtml """
+Something something something...
+![placeholder](http://www.fillmurray.com/200/230) Cuius confodit Ceres quoque donis; annos idem, reliquit per; sum erant facibus
+oppidaque laetus facit. Est haec sic, volucres radice; gratia nec nomine solus
+non istum, ab dictis protinus desine ducebat. Pati mensis in Alcyone Macareus
+quoque, ense non, in cvrrvs et caedibus, et debueram. Lacessas Serpens caput,
+sorores ademptum, montes nitidum pinu Latinum colebatur ignes.
 """
 
 brian = toHtml """

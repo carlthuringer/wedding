@@ -1,93 +1,85 @@
--- Main file
-module Main (..) where
+module Main exposing (..)
 
 import Html exposing (Html, div)
+import Html.App
 import Html.Attributes exposing (class)
 import CountDown
 import Navigation
-import Routing exposing (router)
-import Hop.Types
-import StartApp exposing (App, start)
-import Effects exposing (Effects)
+-- import Routing exposing (router)
+-- import Hop.Types
+-- import StartApp exposing (App, start)
+-- import Cmd exposing (Cmd)
 
-import Components
-import Task exposing (Task)
-
-type Action
-  = TimeUpdate Int
-  | ApplyRoute ( Routing.Route, Hop.Types.Location )
+import Components exposing (views)
+-- import Task exposing (Task)
+import Messages exposing (Msg(TimeUpdate, NoOp))
+import Models exposing (Model, Flags)
 
 
-type alias Model =
-  { countDown : CountDown.Model
-  , routing : Routing.Model
-  }
 
-
-init : ( Model, Effects Action )
-init =
+init : Flags -> ( Model, Cmd Msg )
+init flags =
   ( { countDown = CountDown.init
-    , routing = Routing.init
+    -- , routing = Routing.init
     }
-  , Effects.none
+  , Cmd.none
   )
 
 
-view : Signal.Address Action -> Model -> Html
-view address model =
-  div
-    []
-    [ Navigation.view
-    , div [ class "container" ] [ (Routing.view model.routing Components.views) model ]
+view : Model -> Html Msg
+view model =
+  let views = Components.views
+  in
+    div
+      []
+        [ Navigation.view
+        , div [ class "container" ] [ views.home model ]
     ]
 
 
-update : Action -> Model -> ( Model, Effects Action )
-update action model =
-  case action of
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+  case msg of
     TimeUpdate timeInt ->
       let
         setCountdown =
           { model | countDown = CountDown.update timeInt model.countDown }
       in
-        ( setCountdown, Effects.none )
+        ( setCountdown, Cmd.none )
 
-    ApplyRoute ( route, location ) ->
-      let
-        routing =
-          model.routing
+    NoOp -> ( model, Cmd.none )
 
-        updateRouting =
-          { routing | route = route, location = location }
-      in
-        ( { model | routing = updateRouting }, Effects.none )
+    -- ApplyRoute ( route, location ) ->
+    --   let
+    --     routing =
+    --       model.routing
 
-port hostClock : Signal Int
-port routeRunTask : Task () ()
-port routeRunTask =
-  router.run
+    --     updateRouting =
+    --       { routing | route = route, location = location }
+    --   in
+    --     ( { model | routing = updateRouting }, Cmd.none )
 
-
-routerSignal : Signal Action
-routerSignal =
-  Signal.map ApplyRoute router.signal
+-- port hostClock : (Int) -> Sub msg
+-- port routeRunTask : Task () ()
+-- port routeRunTask =
+--   router.run
 
 
-timeSignal : Signal Action
-timeSignal =
-  Signal.map TimeUpdate hostClock
+-- routerSignal : Msg Cmd
+-- routerSignal =
+--   Signal.map ApplyRoute router.signal
 
 
-app : App Model
-app =
-  start
-    { init = init
-    , update = update
-    , view = view
-    , inputs = [ routerSignal, timeSignal ]
-    }
+-- timeSignal : Signal Action
+-- timeSignal =
+--   Signal.map TimeUpdate hostClock
 
 
-main : Signal Html
+main : Program Flags
 main =
-  app.html
+  Html.App.programWithFlags
+      { init = init
+      , update = update
+      , view = view
+      , subscriptions = \_ -> Sub.none
+      }

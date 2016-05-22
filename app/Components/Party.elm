@@ -1,33 +1,38 @@
-module Components.Party where
+module Components.Party exposing (view)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Markdown exposing (toHtml)
+import Models exposing (Model)
+import Messages exposing (Msg)
 
+view : Model -> Html Msg
 view model = div [ id "party" ]
   [ h2 [] [ text "Wedding Party" ]
   , h3 [] [ text "Bride's Party" ]
-  , partyMember "Jill Cammarata" "placeholder" jill
-  , partyMember "Paul Cammarata" "placeholder" paul
-  , partyMember "Joanna Nichols" "placeholder" joanna
-  , partyMember "Kate Slingerland" "placeholder" kate
-  , partyMember "Carolyn Radville" "placeholder" carolyn
-  , partyMember "Beth Lula" "placeholder" beth
+  , partyMember "Jill Cammarata" jill
+  , partyMember "Paul Cammarata" paul
+  , partyMember "Joanna Nichols" joanna
+  , partyMember "Kate Slingerland" kate
+  , partyMember "Carolyn Radville" carolyn
+  , partyMember "Beth Lula" beth
   , h3 [] [ text "Groom's Party" ]
-  , partyMember "Brian Thuringer" "placeholder" brian
-  , partyMember "Scott McAnally" "placeholder" scott
-  , partyMember "Dustin Mitchell" "placeholder" dustin
-  , partyMember "David Abdemoulie" "placeholder" david
-  , partyMember "Sarah Killian" "placeholder" sarah
+  , partyMember "Brian Thuringer" brian
+  , partyMember "Scott McAnally" scott
+  , partyMember "Dustin Mitchell" dustin
+  , partyMember "David Abdemoulie" david
+  , partyMember "Sarah Killian" sarah
   ]
 
-partyMember name image content =
+partyMember : String -> String -> Html Msg
+partyMember name content =
   article []
     [ h4 [] [ text name ]
-    , content
+    , toHtml [] content
     ]
 
-jill = toHtml """
+jill : String
+jill = """
 Lorem markdownum sensimus bobus Philomela exhibuit paratu. Nubibus praesepibus
 dictis leto vultu: tabo tundit Eryx tenus, trepidantibus cura regina, nec et.
 
@@ -55,7 +60,8 @@ dixit; saxo longo creverunt illum corpora. Moles erat factaque alta placidos,
 flavam poma ut quae Troianae, illam arvis cumque suspendit arreptum si mihi.
 """
 
-paul = toHtml """
+paul : String
+paul = """
 ![placeholder](http://www.fillmurray.com/200/230)
 Lorem markdownum frustraque ille, sufficiunt pugnando terrarum bos regnumque
 iaculo ulterius Psecas valent sed spatio contenta. Regia idem: sequar Iuppiter
@@ -90,7 +96,8 @@ timor cruori cetera quodque offensus domos! Notatas virum pendentiaque conde,
 aut ex loca, temperie o abest credita.![placeholder](http://www.fillmurray.com/200/230)
 """
 
-joanna = toHtml """
+joanna : String
+joanna = """
 In alter possunt totidem. Iamque cervixque vellem Nessus indagine miranti
 volubilibus exilio; cum officio cremabo permiscuit coniectos vixque?
 
@@ -107,7 +114,8 @@ qua induitur Austro et tectos Cyllenide referrem, in vicem. Conscia est conantur
 fere; sui arbore valens?
 """
 
-kate = toHtml """
+kate : String
+kate = """
 Lorem markdownum, est fletus membra pastores gemina, dis nexis est conluerant
 fame dulcedine adsumptumque tenus! Terris populum dabunt patrium rostro iubet,
 torvo Tyrium deorum. Ense tamen. Est felix, est et puellari non care totoque
@@ -126,7 +134,8 @@ tanti rabie artifices velamina nitenti. Domus forma. Et gramen, utrumque in
 Prima.
 """
 
-carolyn = toHtml """
+carolyn : String
+carolyn = """
 1. Quirini te Dixerat exitio murmurat pudicos posset
 2. Detractare vomit errare cohibentem
 3. Quae harundine
@@ -154,7 +163,8 @@ terrore septem obnoxia Troiaeque. Pro invida arbitrium Dianae qua vidit Cyclopis
 bracchiaque Pentheus sine, ille inpune virum Pallorque sui victoremque.
 """
 
-beth = toHtml """
+beth : String
+beth = """
 Something something something...
 ![placeholder](http://www.fillmurray.com/200/230) Cuius confodit Ceres quoque donis; annos idem, reliquit per; sum erant facibus
 oppidaque laetus facit. Est haec sic, volucres radice; gratia nec nomine solus
@@ -163,7 +173,8 @@ quoque, ense non, in cvrrvs et caedibus, et debueram. Lacessas Serpens caput,
 sorores ademptum, montes nitidum pinu Latinum colebatur ignes.
 """
 
-brian = toHtml """
+brian : String
+brian = """
 Cuius confodit Ceres quoque donis; annos idem, reliquit per; sum erant facibus
 oppidaque laetus facit. Est haec sic, volucres radice; gratia nec nomine solus
 non istum, ab dictis protinus desine ducebat. Pati mensis in Alcyone Macareus
@@ -177,7 +188,8 @@ terrore septem obnoxia Troiaeque. Pro invida arbitrium Dianae qua vidit Cyclopis
 bracchiaque Pentheus sine, ille inpune virum Pallorque sui victoremque.
 """
 
-scott = toHtml """
+scott : String
+scott = """
 Lorem markdownum, me senex artificum demit regnat potens; quae quoque esse
 vertice. Pollice cecidisse pectora exaudire gravitas claudit vestigia letum et
 Pandion accipe, inimicos nescit pericula possunt, fidissima. Loricamque dixit,
@@ -192,7 +204,8 @@ quibus, tua obvertit latus una fores.
 - Positis inquit
 """
 
-dustin = toHtml """
+dustin : String
+dustin = """
 Protinus viae Helicen nitentibus, viro suis sanguine ebur, ille crimen; aut
 pollice, in iuventa. Postquam et rabies profectura turba. Quam ait confusa
 laudant nihil.
@@ -213,7 +226,8 @@ admonita fudit nodoso.
 5. Sanguis benignior et mentis ripae salutifera longa
 """
 
-david = toHtml """
+david : String
+david = """
 Insopitumque sine sanguine iacent virgo faticinasque nefas, non sum latices
 terruit positi. Et sidera intus, manu figit bracchia iustissima dant nimiumque
 adeo. Tuumque tantumque praemia nostras adamante excidit.
@@ -224,7 +238,8 @@ relictus pthiam fossa tamen. Te quod vocato Horae, percussere necis. Vox male,
 ego canos: ora declivis ignavus iungunt, Hic vires!
 """
 
-sarah = toHtml """
+sarah : String
+sarah = """
 ![placeholder](http://www.fillmurray.com/200/230)
 Lorem markdownum hanc solis ignibus, si sed domum tellure minorem Troiae rari!
 Est fugias palus nec nullis, gemitu deprensa clipeus matrona sudataque nulla

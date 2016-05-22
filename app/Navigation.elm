@@ -1,9 +1,10 @@
-module Navigation where
+module Navigation exposing (view)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import Messages exposing (Msg)
 
-view : Html
+view : Html Msg
 view =
   nav [
     classList [

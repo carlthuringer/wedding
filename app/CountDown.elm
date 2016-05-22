@@ -1,9 +1,9 @@
-module CountDown where
+module CountDown exposing (..)
 
 import Html exposing (..)
 import Date exposing (..)
 import Time exposing (..)
-import Debug
+import Messages exposing (Msg)
 
 type alias Model = {
   date : Date
@@ -58,7 +58,7 @@ toUnixSeconds date =
   |> Date.toTime
   |> Time.inSeconds
 
-view : Model -> Html
+view : Model -> Html(Msg)
 view state =
   let
     weddingSecs = toUnixSeconds weddingTime

@@ -1,4 +1,4 @@
-module Components.Home exposing (view)
+module Components.Home exposing (homeview)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -6,8 +6,8 @@ import CountDown exposing (view)
 import Models exposing (Model)
 import Messages exposing (Msg)
 
-view : Model -> Html Msg
-view model =
+homeview : Model -> Html Msg
+homeview model =
   div [] [
     h1 [] [ text "Carl & Nicole"],
     div [ class "wedding-colors" ] [

@@ -1,16 +1,15 @@
 module Main exposing (..)
 
-import Html exposing (Html, div)
+import Html exposing (Html, div, h1, text, p)
 import Html.App
-import Html.Attributes exposing (class)
 import CountDown
 import Navigation
 import Messages exposing (Msg(..))
 import Models exposing (Model, Flags)
 import Routes exposing (Sitemap(..))
 import Ports exposing (pushPath, path)
-import Components.Home exposing (view)
-import Components.Party exposing (view)
+import Components.Home exposing (homeview)
+import Components.Party exposing (partyview)
 
 
 init : Flags -> ( Model, Cmd Msg )
@@ -28,11 +27,10 @@ view : Model -> Html Msg
 view model =
   div []
         [ Navigation.view
-        , div [ class "container" ]
-            [ case model.route of
-                HomeR () -> Components.Home.view model
-                PartyR () -> Components.Party.view model
-            ]
+        , case model.route of
+            HomeR () -> homeview model
+            PartyR () -> partyview model
+            NotFoundR -> text "Not Found"
         ]
 
 

@@ -5,14 +5,14 @@ import Date exposing (..)
 import Time exposing (..)
 import Messages exposing (Msg)
 
-type alias Model = {
+type alias CountDownModel = {
   date : Date
 }
 
-init : Model
+init : CountDownModel
 init = { date = Date.fromTime(0) }
 
-update : Int -> Model -> Model
+update : Int -> CountDownModel -> CountDownModel
 update time model = { model | date = Date.fromTime(toFloat time) }
 
 monthNumber : Date.Month -> Int
@@ -58,7 +58,7 @@ toUnixSeconds date =
   |> Date.toTime
   |> Time.inSeconds
 
-view : Model -> Html(Msg)
+view : CountDownModel -> Html(Msg)
 view state =
   let
     weddingSecs = toUnixSeconds weddingTime

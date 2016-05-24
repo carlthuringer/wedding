@@ -1,12 +1,12 @@
-module Routing exposing (..)
+module Common.View exposing (..)
 
 import Html exposing (Html, a, text)
 import Html.Attributes exposing (href)
 import Html.Events exposing (onWithOptions)
 import Json.Decode as Json
-import Route exposing (..)
-import Routes exposing (Sitemap(..), homeR)
-import Messages exposing (Msg(..))
+import Routes exposing (Sitemap)
+import Messages exposing (Msg(RouteTo))
+
 
 link : Sitemap -> String -> Html Msg
 link route label =
@@ -17,15 +17,7 @@ link route label =
             }
     in
         a
-            [ href (doRoute route)
+            [ href (Routes.doRoute route)
             , onWithOptions "click" opts (Json.succeed <| RouteTo route)
             ]
             [ text label ]
-
-
-doRoute : Sitemap -> String
-doRoute r =
-  case r of
-    HomeR () ->
-      reverse homeR []
-

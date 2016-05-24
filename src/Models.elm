@@ -1,13 +1,13 @@
 module Models exposing (Model, Flags)
 
 import CountDown exposing (Model)
--- import Hop.Types exposing (Location)
--- import Routing exposing (Route, Model)
+import Routes exposing (Sitemap)
 
 type alias Model =
-  { countDown: CountDown.Model
-  --, routing: Routing.Model
-  }
+    { countDown : CountDown.Model
+    , route : Sitemap
+    }
 
-type alias Flags = {}
 
+type alias Flags =
+    { path : String }

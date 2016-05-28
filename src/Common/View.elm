@@ -5,7 +5,7 @@ import Html.Attributes exposing (href)
 import Html.Events exposing (onWithOptions)
 import Json.Decode as Json
 import Routes exposing (Sitemap)
-import Messages exposing (Msg(RouteTo))
+import Update exposing (Msg(RouteTo))
 
 
 link : Sitemap -> String -> Html Msg

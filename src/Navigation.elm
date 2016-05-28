@@ -2,9 +2,9 @@ module Navigation exposing (view)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Messages exposing (Msg)
 import Common.View exposing (link)
 import Routes exposing (Sitemap(..))
+import Update exposing (Msg)
 
 view : Html Msg
 view =
@@ -13,7 +13,7 @@ view =
             [ ul [ classList [ ( "nav", True ), ( "navbar-nav", True ) ] ]
                 [ li [] [ link (HomeR ()) "Home" ]
                 , li [] [ link (PartyR ()) "Party" ]
-                , li [ classList [ ( "active", False ) ] ] [ a [ href "#/venue" ] [ text "Venue" ] ]
+                , li [] [ link (VenueR ()) "Venue" ]
                 ]
             ]
         ]

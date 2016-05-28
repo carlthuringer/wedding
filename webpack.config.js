@@ -15,7 +15,7 @@ var commonConfig = {
 
   output: {
     path:       path.resolve( __dirname, 'dist/' ),
-    filename: '[hash].js',
+    filename: '[hash].js'
   },
 
   resolve: {
@@ -41,9 +41,9 @@ var commonConfig = {
     })
   ],
 
-  postcss: [ autoprefixer( { browsers: ['last 2 versions'] } ) ],
+  postcss: [ autoprefixer( { browsers: ['last 2 versions'] } ) ]
 
-}
+};
 
 // additional webpack settings for local env (when invoked by 'npm start')
 if ( TARGET_ENV === 'development' ) {

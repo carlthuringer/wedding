@@ -3,11 +3,7 @@ module CountDown exposing (..)
 import Html exposing (..)
 import Date exposing (..)
 import Time exposing (..)
-import Messages exposing (Msg)
-
-type alias CountDownModel = {
-  date : Date
-}
+import Update exposing (Msg)
 
 init : CountDownModel
 init = { date = Date.fromTime(0) }

@@ -1,4 +1,4 @@
-module Update exposing (Msg(..), Model, update, init)
+module Update exposing (Msg(..), Model, Flags, update, init)
 
 import Ports exposing (pushPath)
 import Routes exposing (Sitemap)

@@ -7,7 +7,7 @@ import Navigation
 import Routes exposing (Sitemap(..))
 import Ports exposing (pushPath, path)
 import View exposing (view)
-import Update exposing (Flags, update, init)
+import Update exposing (Flags, Msg(PathChanged), update, init)
 
 
 

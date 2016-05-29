@@ -1,2 +1,2 @@
-brunch build
-rsync -avz public/ carl@wedding.thuringer.us:/var/app/wedding/
+npm run build
+rsync -avz dist/ carl@wedding.thuringer.us:/var/app/wedding/

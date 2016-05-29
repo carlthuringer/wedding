@@ -3,10 +3,10 @@ module Components.Party exposing (view)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Markdown exposing (toHtml)
-import Update exposing (Model, Msg)
+import Messages exposing (Msg)
 
-view : Model -> Html Msg
-view model = div [ id "party" ]
+view : Html Msg
+view = div [ id "party" ]
   [ h2 [] [ text "Wedding Party" ]
   , h3 [] [ text "Bride's Party" ]
   , partyMember "Jill Cammarata" jill

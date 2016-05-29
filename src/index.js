@@ -12,3 +12,10 @@ app.ports.pushPath.subscribe(function(path) {
   window.history.pushState({}, "", path);
   app.ports.path.send(window.location.pathname);
 });
+
+
+function currentTime() { return (new Date()).valueOf(); }
+(function sendTime() {
+  app.ports.hostClock.send(currentTime());
+  requestAnimationFrame(sendTime);
+})();

@@ -2,8 +2,9 @@ module Components.Home exposing (view)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
--- import CountDown exposing (view)
-import Update exposing (Model, Msg)
+import CountDown exposing (view)
+import Update exposing (Model)
+import Messages exposing (Msg)
 
 view : Model -> Html Msg
 view model =
@@ -16,7 +17,7 @@ view model =
       div [ class "medium-grey" ] []
     ],
     p [ class "lead" ] [
-      --CountDown.view model.countDown,
+      CountDown.view model.countDown,
       text " Until they get married!"
     ]
   ]

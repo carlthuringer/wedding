@@ -4,7 +4,8 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Common.View exposing (link)
 import Routes exposing (Sitemap(..))
-import Update exposing (Msg)
+import Messages exposing (Msg)
+
 
 view : Html Msg
 view =

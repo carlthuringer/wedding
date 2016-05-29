@@ -1,14 +1,10 @@
 module Main exposing (..)
 
-import Html exposing (Html, div, h1, text, p)
 import Html.App as App
--- import CountDown
-import Navigation
-import Routes exposing (Sitemap(..))
-import Ports exposing (pushPath, path)
+import Ports exposing (hostClock, path)
 import View exposing (view)
-import Update exposing (Flags, Msg(PathChanged), update, init)
-
+import Update exposing (Flags, update, init)
+import Messages exposing (Msg(PathChanged, TimeUpdate))
 
 
 main : Program Flags
@@ -18,5 +14,8 @@ main =
         , update = update
         , view = view
         , subscriptions =
-            \_ -> Sub.batch [ path PathChanged ]
+            \_ -> Sub.batch
+                  [ path PathChanged
+                  , hostClock TimeUpdate
+                  ]
         }

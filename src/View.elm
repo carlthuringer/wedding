@@ -4,14 +4,14 @@ import Html exposing (Html, div, text)
 
 import Routes exposing (Sitemap(..))
 import Navigation
--- import Messages exposing (Msg(..))
-import Update exposing(Msg(..), Model)
+import Update exposing(Model)
+import Messages exposing (Msg)
 
 import Components.Home as Home
 import Components.Party as Party
 import Components.Venue as Venue
 
-view : Model -> Html Update.Msg
+view : Model -> Html Msg
 view model =
     div []
         [ Navigation.view
@@ -20,10 +20,10 @@ view model =
                 Home.view model
 
             PartyR () ->
-                Party.view model
+                Party.view
 
             VenueR () ->
-                Venue.view model
+                Venue.view
 
             NotFoundR ->
                 text "Not Found"

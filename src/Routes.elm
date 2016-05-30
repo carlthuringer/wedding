@@ -8,6 +8,7 @@ type Sitemap
     | PartyR ()
     | NotFoundR
     | VenueR ()
+    | GalleryR ()
 
 
 homeR =
@@ -21,9 +22,11 @@ partyR =
 venueR =
     VenueR := static "venue"
 
+galleryR =
+    GalleryR := static "gallery"
 
 sitemap =
-    router [ homeR, partyR, venueR ]
+    router [ homeR, partyR, venueR, galleryR ]
 
 
 match : String -> Sitemap
@@ -43,6 +46,9 @@ doRoute r =
 
         VenueR () ->
             reverse venueR []
+
+        GalleryR () ->
+            reverse galleryR []
 
         NotFoundR ->
             Debug.crash "Cannot route to Not Found"

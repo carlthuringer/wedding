@@ -15,6 +15,7 @@ view =
                 [ li [] [ link (HomeR ()) "Home" ]
                 , li [] [ link (PartyR ()) "Party" ]
                 , li [] [ link (VenueR ()) "Travel and Accomodation" ]
+                , li [] [ link (GalleryR ()) "Photo Gallery" ]
                 ]
             ]
         ]

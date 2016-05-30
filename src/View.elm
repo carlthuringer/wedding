@@ -10,6 +10,7 @@ import Messages exposing (Msg)
 import Components.Home as Home
 import Components.Party as Party
 import Components.Venue as Venue
+import Components.Gallery as Gallery
 
 view : Model -> Html Msg
 view model =
@@ -24,6 +25,9 @@ view model =
 
             VenueR () ->
                 Venue.view
+
+            GalleryR () ->
+                Gallery.view
 
             NotFoundR ->
                 text "Not Found"

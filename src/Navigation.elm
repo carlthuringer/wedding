@@ -18,6 +18,7 @@ view =
                 , li [] [ link (GalleryR ()) "Photo Gallery" ]
                 , li [] [ link (ContactR ()) "Contact Us" ]
                 , li [] [ link (RSVPR ()) "RSVP" ]
+                , li [] [ link (EventDetailsR ()) "Event Details" ]
                 ]
             ]
         ]

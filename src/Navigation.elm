@@ -14,7 +14,7 @@ view =
             [ ul [ classList [ ( "nav", True ), ( "navbar-nav", True ) ] ]
                 [ li [] [ link (HomeR ()) "Home" ]
                 , li [] [ link (PartyR ()) "Party" ]
-                , li [] [ link (VenueR ()) "Venue" ]
+                , li [] [ link (VenueR ()) "Travel and Accomodation" ]
                 ]
             ]
         ]

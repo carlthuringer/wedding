@@ -12,6 +12,7 @@ import Components.Party as Party
 import Components.Venue as Venue
 import Components.Gallery as Gallery
 import Components.Contact as Contact
+import Components.RSVP as RSVP
 
 view : Model -> Html Msg
 view model =
@@ -32,6 +33,9 @@ view model =
 
             ContactR () ->
                 Contact.view
+
+            RSVPR () ->
+                RSVP.view
 
             NotFoundR ->
                 text "Not Found"

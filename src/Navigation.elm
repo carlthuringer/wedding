@@ -17,6 +17,7 @@ view =
                 , li [] [ link (VenueR ()) "Travel and Accomodation" ]
                 , li [] [ link (GalleryR ()) "Photo Gallery" ]
                 , li [] [ link (ContactR ()) "Contact Us" ]
+                , li [] [ link (RSVPR ()) "RSVP" ]
                 ]
             ]
         ]

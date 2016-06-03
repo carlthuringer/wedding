@@ -8,15 +8,15 @@ import Messages exposing (Msg)
 
 view : Model -> Html Msg
 view model =
-  div [] [
-    h1 [] [ text "Carl & Nicole"],
-    div [ class "wedding-colors" ] [
+  div [ class "flex column" ] [
+    h1 [ class "center-auto" ] [ text "Carl & Nicole"],
+    div [ class "wedding-colors center-auto" ] [
       div [ class "rose-gold" ] [],
       div [ class "peach" ] [],
       div [ class "serenity-blue" ] [],
       div [ class "medium-grey" ] []
     ],
-    p [ class "lead" ] [
+    p [ class "center-auto" ] [
       CountDown.view model.countDown,
       text " Until they get married!"
     ]

@@ -42,3 +42,42 @@ article {
       height: 0;
   }
 }
+
+.flex {
+    display: flex;
+}
+
+.center {
+    content-justify: center;
+}
+
+nav {
+    ul { padding: 0; }
+    li {
+        list-style: none;
+        margin: 0 1em;
+    }
+}
+
+.full {
+    width: 100%;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.center-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    margin: 1em auto;
+}
+
+a {
+    color: darken($serenity-blue, 30%);
+    font-weight: 800;
+    text-decoration: none;
+}

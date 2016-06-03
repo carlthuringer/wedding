@@ -1,6 +1,7 @@
 module View exposing (view)
 
 import Html exposing (Html, div, text)
+import Html.Attributes exposing (class)
 import Routes exposing (Sitemap(..))
 import Navigation
 import Update exposing (Model)
@@ -17,9 +18,8 @@ import Components.OurStory as OurStory
 
 view : Model -> Html Msg
 view model =
-    div []
-        [ Navigation.view
-        , case model.route of
+    div [ class "full column" ]
+        [ case model.route of
             HomeR () ->
                 Home.view model
 
@@ -46,4 +46,5 @@ view model =
 
             NotFoundR ->
                 text "Not Found"
+        , Navigation.view
         ]

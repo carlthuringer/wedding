@@ -9,8 +9,8 @@ import Messages exposing (Msg)
 
 view : Html Msg
 view =
-    nav [ class "flex" ]
-        [ ul [ class "flex center-auto" ]
+    nav []
+        [ ul [ class "flex wrap" ]
             [ li [] [ link (HomeR ()) "Home" ]
             , li [] [ link (PartyR ()) "Party" ]
             , li [] [ link (VenueR ()) "Travel and Accomodation" ]

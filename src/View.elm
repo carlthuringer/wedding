@@ -1,9 +1,7 @@
 module View exposing (view)
 
 import Html exposing (Html, div, text)
-import Html.Attributes exposing (class)
 import Routes exposing (Sitemap(..))
-import Navigation
 import Update exposing (Model)
 import Messages exposing (Msg)
 import Components.Home as Home
@@ -14,37 +12,59 @@ import Components.Contact as Contact
 import Components.RSVP as RSVP
 import Components.EventDetails as EventDetails
 import Components.OurStory as OurStory
+import Navigation exposing (view)
 
 
 view : Model -> Html Msg
 view model =
-    div [ class "full column" ]
-        [ case model.route of
-            HomeR () ->
-                Home.view model
+    case model.route of
+        HomeR () ->
+            div []
+                [ Home.view model
+                , Navigation.view
+                ]
 
-            PartyR () ->
-                Party.view
+        PartyR () ->
+            div []
+                [ Navigation.view
+                , Party.view
+                ]
 
-            VenueR () ->
-                Venue.view
+        VenueR () ->
+            div []
+                [ Navigation.view
+                , Venue.view
+                ]
 
-            GalleryR () ->
-                Gallery.view
+        GalleryR () ->
+            div []
+                [ Navigation.view
+                , Gallery.view
+                ]
 
-            ContactR () ->
-                Contact.view
+        ContactR () ->
+            div []
+                [ Navigation.view
+                , Contact.view
+                ]
 
-            RSVPR () ->
-                RSVP.view
+        RSVPR () ->
+            div []
+                [ Navigation.view
+                , RSVP.view
+                ]
 
-            EventDetailsR () ->
-                EventDetails.view
+        EventDetailsR () ->
+            div []
+                [ Navigation.view
+                , EventDetails.view
+                ]
 
-            OurStoryR () ->
-                OurStory.view
+        OurStoryR () ->
+            div []
+                [ Navigation.view
+                , OurStory.view
+                ]
 
-            NotFoundR ->
-                text "Not Found"
-        , Navigation.view
-        ]
+        NotFoundR ->
+            text "Not Found"

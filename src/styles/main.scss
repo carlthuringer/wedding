@@ -28,7 +28,7 @@ body {
 
 article {
   padding: 1rem;
-  margin: 1rem;
+  margin-bottom: 1rem;
   background-color: rgb(210, 210, 210);
   img {
     float: right;
@@ -44,10 +44,18 @@ article {
 }
 
 .flex {
+    &.wrap { flex-wrap: wrap; }
     display: flex;
+    flex: 1 0 auto;
+    .three-columns {
+        max-width: 30rem;
+    }
+    justify-content: space-around;
 }
 
+
 .center {
+    text-align: center;
     content-justify: center;
 }
 
@@ -55,7 +63,7 @@ nav {
     ul { padding: 0; }
     li {
         list-style: none;
-        margin: 0 1em;
+        margin: 0 1em 1em 1em;
     }
 }
 
@@ -68,6 +76,7 @@ nav {
 }
 
 .center-auto {
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
 }

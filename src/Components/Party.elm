@@ -209,17 +209,21 @@ sorores ademptum, montes nitidum pinu Latinum colebatur ignes.
 brian : String
 brian =
     """
-Cuius confodit Ceres quoque donis; annos idem, reliquit per; sum erant facibus
-oppidaque laetus facit. Est haec sic, volucres radice; gratia nec nomine solus
-non istum, ab dictis protinus desine ducebat. Pati mensis in Alcyone Macareus
-quoque, ense non, in cvrrvs et caedibus, et debueram. Lacessas Serpens caput,
-sorores ademptum, montes nitidum pinu Latinum colebatur ignes.
+Individualistic and rebellious, yet mild-mannered, the artist challenges our
+sensibilities and expectations. Whether in his effort effect positive change in
+the world around him, a surreal and inquisitive artistic expression, or a ravenous
+truth-seeking debate, Brian seeks to know and be understood by those he loves.
 
-Inque hunc hic candescere germana, ne ore urbesque quae est. Ne parat maris, ore
-usque siqua, scelerata pars gentes, cuspis hoc Tonanti terras, retexite. Solis
-accipiunt stabula soporem perire date natae sequiturque omnis quidem Iovis et
-terrore septem obnoxia Troiaeque. Pro invida arbitrium Dianae qua vidit Cyclopis
-bracchiaque Pentheus sine, ille inpune virum Pallorque sui victoremque.
+He passes the time hiking in the parks around Mesa, Arizona where he has lived
+with his partner Jillian for two years. He is just as avaricious when exploring the
+natural world as elsewhere, and as he masters its challenges he is also humbled.
+Brian has also grown in respect and responsibility with his employer, Workinman,
+where he lends his sharp, striking style to their interactive media projects.
+
+Brian hopes to one day grow his freelance art and design work to full-time,
+cultivate his professional network, and work high-profile and exciting projects
+in the concept art community. Carl is very proud of his younger brother and loves him
+for the way Brian challenges him every day, his maturity, and indomitable spirit.
 """
 
 

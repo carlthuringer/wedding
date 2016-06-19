@@ -13,7 +13,11 @@ body {
   font-size: 18pt;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
+    font-family: 'Pacifico', serif;
+}
+
+.pacifico {
     font-family: 'Pacifico', serif;
 }
 
@@ -72,14 +76,23 @@ article {
     content-justify: center;
 }
 
+
+
 nav {
     ul { padding: 0; }
     li {
         list-style: none;
-        margin: 0 1em 1em 1em;
+        margin: 0 .5em 1em .5em;
+        a { padding: 0 .5em; }
     }
     text-transform: uppercase;
     font-family: "Open Sans Condensed", sans-serif;
+    li > .active
+    {
+        transition: 2s all;
+        background-color: darken($serenity-blue, 30%);
+        color: $nearlyWhite;
+    }
 }
 
 .full {

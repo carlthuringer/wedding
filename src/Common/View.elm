@@ -1,15 +1,15 @@
 module Common.View exposing (..)
 
 import Html exposing (Html, a, text)
-import Html.Attributes exposing (href)
+import Html.Attributes exposing (href, classList)
 import Html.Events exposing (onWithOptions)
 import Json.Decode as Json
 import Routes exposing (Sitemap)
 import Messages exposing (Msg(RouteTo))
 
 
-link : Sitemap -> String -> Html Msg
-link route label =
+link : Sitemap -> Sitemap -> String -> Html Msg
+link currentRoute toRoute label =
     let
         opts =
             { preventDefault = True
@@ -17,7 +17,8 @@ link route label =
             }
     in
         a
-            [ href (Routes.doRoute route)
-            , onWithOptions "click" opts (Json.succeed <| RouteTo route)
+            [ href (Routes.doRoute toRoute)
+            , onWithOptions "click" opts (Json.succeed <| RouteTo toRoute)
+            , classList [("active", currentRoute == toRoute)]
             ]
             [ text label ]

@@ -9,8 +9,7 @@ import Messages exposing (Msg)
 view : Html Msg
 view =
     div [ id "party" ]
-        [ h1 [ class "center" ] [ text "Wedding Party" ]
-        , div []
+        [ div []
             [ h3 [] [ text "Bride's Party" ]
             , div
                 [ classList

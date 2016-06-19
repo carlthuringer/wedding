@@ -7,4 +7,5 @@ import Navigation exposing (view)
 
 view : Html Msg
 view =
-    div [] [ text "RSVP page coming soon" ]
+    div []
+        [ text "RSVP page coming soon" ]

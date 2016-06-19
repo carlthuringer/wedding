@@ -21,48 +21,48 @@ view model =
         HomeR () ->
             div []
                 [ Home.view model
-                , Navigation.view
+                , Navigation.view model
                 ]
 
         PartyR () ->
             div []
-                [ Navigation.view
+                [ Navigation.view model
                 , Party.view
                 ]
 
         VenueR () ->
             div []
-                [ Navigation.view
+                [ Navigation.view model
                 , Venue.view
                 ]
 
         GalleryR () ->
             div []
-                [ Navigation.view
+                [ Navigation.view model
                 , Gallery.view
                 ]
 
         ContactR () ->
             div []
-                [ Navigation.view
+                [ Navigation.view model
                 , Contact.view
                 ]
 
         RSVPR () ->
             div []
-                [ Navigation.view
+                [ Navigation.view model
                 , RSVP.view
                 ]
 
         EventDetailsR () ->
             div []
-                [ Navigation.view
+                [ Navigation.view model
                 , EventDetails.view
                 ]
 
         OurStoryR () ->
             div []
-                [ Navigation.view
+                [ Navigation.view model
                 , OurStory.view
                 ]
 

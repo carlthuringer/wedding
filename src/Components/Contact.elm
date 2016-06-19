@@ -6,4 +6,6 @@ import Html exposing (..)
 
 view : Html Msg
 view =
-    div [] [ text "Coming Soon" ]
+    div []
+        [ text "Coming Soon"
+        ]

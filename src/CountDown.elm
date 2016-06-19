@@ -4,6 +4,7 @@ import Html exposing (..)
 import Date exposing (..)
 import Time exposing (..)
 import Messages exposing (Msg)
+import String
 
 
 type alias Model =
@@ -140,18 +141,21 @@ view state =
 
         secondDifference =
             (minuteDifference - (toFloat (floor minuteDifference))) * 60
+
+        sections =
+            [ "seconds", "minutes", "hours", "days", "months", "years" ]
+
+        counts =
+            [ secondDifference, minuteDifference, hourDifference, dayDifference, monthDifference, yearDifference ]
+        zip =
+            List.map2 (,)
     in
-        text
-            ((toString (floor yearDifference))
-                ++ " year "
-                ++ (toString (floor monthDifference))
-                ++ " months "
-                ++ (toString (floor dayDifference))
-                ++ " days "
-                ++ (toString (floor hourDifference))
-                ++ " hours "
-                ++ (toString (floor minuteDifference))
-                ++ " minutes and "
-                ++ (toString (floor secondDifference))
-                ++ " seconds"
-            )
+        counts
+        |> List.map floor
+        |> List.filter (\x -> x > 0)
+        |> List.map toString
+        |> zip sections
+        |> List.reverse
+        |> List.concatMap (\(a, b) -> [b, a])
+        |> String.join " "
+        |> text

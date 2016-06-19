@@ -141,21 +141,15 @@ view state =
 
         secondDifference =
             (minuteDifference - (toFloat (floor minuteDifference))) * 60
-
-        sections =
-            [ "seconds", "minutes", "hours", "days", "months", "years" ]
-
-        counts =
-            [ secondDifference, minuteDifference, hourDifference, dayDifference, monthDifference, yearDifference ]
-        zip =
-            List.map2 (,)
     in
-        counts
-        |> List.map floor
-        |> List.filter (\x -> x > 0)
-        |> List.map toString
-        |> zip sections
-        |> List.reverse
-        |> List.concatMap (\(a, b) -> [b, a])
-        |> String.join " "
-        |> text
+        [ ( floor yearDifference, "years" )
+        , ( floor monthDifference, "months" )
+        , ( floor dayDifference, "days" )
+        , ( floor hourDifference, "hours" )
+        , ( floor minuteDifference, "minutes" )
+        , ( floor secondDifference, "seconds" )
+        ]
+            |> List.filter (\( a, b ) -> a > 0)
+            |> List.concatMap (\( a, b ) -> [ toString a, b ])
+            |> String.join " "
+            |> text

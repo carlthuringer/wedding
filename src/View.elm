@@ -45,7 +45,7 @@ view model =
         ContactR () ->
             div []
                 [ Navigation.view model
-                , Contact.view
+                , Contact.view model
                 ]
 
         RSVPR () ->

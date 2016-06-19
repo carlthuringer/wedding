@@ -7,36 +7,39 @@ $nearlyWhite: rgb(250, 250, 250);
 $darkCharcoal: rgb(57, 57, 57);
 
 body {
-  background-color: $nearlyWhite;
-  color: $darkCharcoal;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 18pt;
+    background-color: $nearlyWhite;
+    color: $darkCharcoal;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12pt;
 }
 
 h1, h2, h3 {
+    margin-bottom: .3em;
     font-family: 'Pacifico', serif;
 }
 
 .pacifico {
     font-family: 'Pacifico', serif;
+    line-height: 1em;
 }
 
 h2, h3, h4, h5, h6 {
+    margin: .3rem 0;
     padding-bottom: .3em;
     border-bottom: 0.5px solid $darkCharcoal;
 }
 
 .wedding-colors {
-  $size: 128px;
-  display: flex;
-  flex-flow: row wrap;
-  width: $size * 2;
-  height: auto;
-  div {
-    width: $size;
-    height: $size;
-    margin: auto;
-  }
+    $size: 128px;
+    display: flex;
+    flex-flow: row wrap;
+    width: $size * 2;
+    height: auto;
+    div {
+        width: $size;
+        height: $size;
+        margin: auto;
+    }
 }
 
 .rose-gold { background-color: $rose_gold }
@@ -45,19 +48,18 @@ h2, h3, h4, h5, h6 {
 .medium-grey { background-color: $medium_grey }
 
 article {
-  padding: 1rem;
-  margin-bottom: 1rem;
-  img {
-    float: right;
-  }
-  ::after {
-      visibility: hidden;
-      display: block;
-      font-size: 0;
-      content: " ";
-      clear: both;
-      height: 0;
-  }
+    margin: 0 .5rem 1rem .5rem;
+    img {
+        float: right;
+    }
+    ::after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+    }
 }
 
 .flex {
@@ -65,7 +67,7 @@ article {
     display: flex;
     flex: 1 0 auto;
     .three-columns {
-        max-width: 30rem;
+        max-width: 29rem;
     }
     justify-content: space-around;
 }
@@ -82,7 +84,7 @@ nav {
     ul { padding: 0; }
     li {
         list-style: none;
-        margin: 0 .5em 1em .5em;
+        margin: 0 .1em .3em .1em;
         a { padding: 0 .5em; }
     }
     text-transform: uppercase;
@@ -122,4 +124,21 @@ a {
         transition: 1s all;
         color: $serenity-blue;
     }
+}
+
+.contact-form {
+    font-size: 16pt;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 2em;
+    border: 3px solid $darkCharcoal;
+    box-sizing: border-box;
+}
+
+.contact-button {
+    margin: .5em 0;
+    padding: .5em;
+    background-color: darken($serenity-blue, 30%);
+    color: $nearlyWhite;
+    border-radius: 8px;
 }

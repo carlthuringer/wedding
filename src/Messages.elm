@@ -8,3 +8,4 @@ type Msg
     | TimeUpdate Int
     | RouteTo Sitemap
     | PathChanged String
+    | ContactChange String

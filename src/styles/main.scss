@@ -3,9 +3,23 @@ $peach: rgb(253, 198, 178);
 $serenity_blue: rgb(145, 168, 210);
 $medium_grey: rgb(152, 150, 164);
 $ivory: rgb(229, 225, 223);
+$nearlyWhite: rgb(250, 250, 250);
+$darkCharcoal: rgb(57, 57, 57);
 
 body {
-  background-color: $ivory;
+  background-color: $nearlyWhite;
+  color: $darkCharcoal;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18pt;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Pacifico', serif;
+}
+
+h2, h3, h4, h5, h6 {
+    padding-bottom: .3em;
+    border-bottom: 0.5px solid $darkCharcoal;
 }
 
 .wedding-colors {
@@ -29,7 +43,6 @@ body {
 article {
   padding: 1rem;
   margin-bottom: 1rem;
-  background-color: rgb(210, 210, 210);
   img {
     float: right;
   }
@@ -65,6 +78,8 @@ nav {
         list-style: none;
         margin: 0 1em 1em 1em;
     }
+    text-transform: uppercase;
+    font-family: "Open Sans Condensed", sans-serif;
 }
 
 .full {
@@ -89,4 +104,9 @@ a {
     color: darken($serenity-blue, 30%);
     font-weight: 800;
     text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+        transition: 1s all;
+        color: $serenity-blue;
+    }
 }

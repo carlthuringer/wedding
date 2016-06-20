@@ -14,7 +14,7 @@ view model =
         [ ul [ class "flex wrap" ]
             [ li [ class "pacifico" ] [ link model.route (HomeR ()) "C&N" ]
             , li [] [ link model.route (PartyR ()) "Party" ]
-            , li [] [ link model.route (VenueR ()) "Travel and Accomodation" ]
+            , li [] [ link model.route (TravelAndAccomodationR ()) "Travel and Accomodation" ]
             , li [] [ link model.route (GalleryR ()) "Photo Gallery" ]
             , li [] [ link model.route (ContactR ()) "Contact Us" ]
             , li [] [ link model.route (RSVPR ()) "RSVP" ]

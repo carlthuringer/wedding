@@ -10,7 +10,7 @@ import Messages exposing (Msg)
 view : Model -> Html Msg
 view model =
     div [ class "flex column" ]
-        [ h1 [ class "center-auto" ] [ text "Carl & Nicole" ]
+        [ h1 [ class "center-auto pacifico" ] [ text "Carl & Nicole" ]
         , div [ class "wedding-colors center-auto" ]
             [ div [ class "rose-gold" ] []
             , div [ class "peach" ] []

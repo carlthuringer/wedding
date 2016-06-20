@@ -9,8 +9,9 @@ import Messages exposing (Msg)
 view : Html Msg
 view =
     div [ id "party" ]
-        [ div []
-            [ h3 [] [ text "Bride's Party" ]
+        [ h1 [] [ text "Wedding Party" ]
+        , div []
+            [ h2 [] [ text "Bride's Party" ]
             , div
                 [ classList
                     [ ( "flex", True )
@@ -26,7 +27,7 @@ view =
                 ]
             ]
         , div []
-            [ h3 [] [ text "Groom's Party" ]
+            [ h2 [] [ text "Groom's Party" ]
             , div
                 [ classList
                     [ ( "flex", True )
@@ -46,7 +47,7 @@ view =
 partyMember : String -> String -> Html Msg
 partyMember name content =
     article [ class "three-columns" ]
-        [ h4 [] [ text name ]
+        [ h3 [] [ text name ]
         , toHtml [] content
         ]
 

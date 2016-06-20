@@ -11,11 +11,13 @@ import Update exposing (Model)
 view : Model -> Html Msg
 view model =
     div [ class "contact" ]
-        [ textarea
+        [ h1 [] [ text "Contact Us" ]
+        , textarea
             [ class "contact-form"
             , rows 10
             , cols 10
             , onInput ContactChange
+            , placeholder "Type your short message here..."
             ]
             []
         , div []

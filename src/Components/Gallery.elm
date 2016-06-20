@@ -7,5 +7,6 @@ import Messages exposing (Msg)
 view : Html Msg
 view =
     div []
-        [ p [] [ text "Photo gallery coming soon!" ]
+        [ h1 [] [ text "Gallery" ]
+        , p [] [ text "Photo gallery coming soon!" ]
         ]

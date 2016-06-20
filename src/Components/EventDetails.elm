@@ -7,7 +7,8 @@ import Messages exposing (Msg)
 view : Html Msg
 view =
     div []
-        [ table []
+        [ h1 [] [ text "Event Details" ]
+        , table []
             [ tr [] [ td [] [ strong [] [ text "Saturday, June 3, 2017 @ 5 p.m." ] ] ]
             , tr [] [ td [] [ strong [] [ text "Center for Visual and Performing Arts" ] ] ]
             , tr [] [ td [] [ text "1040 Ridge Road" ] ]

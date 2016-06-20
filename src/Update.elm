@@ -4,12 +4,14 @@ import Ports exposing (pushPath)
 import Routes exposing (Sitemap)
 import CountDown exposing (init)
 import Messages exposing (Msg(..))
+import Window
 
 
 type alias Model =
     { countDown : CountDown.Model
     , route : Sitemap
     , contact : String
+    , window : Window.Size
     }
 
 
@@ -24,6 +26,7 @@ init { path } =
             { countDown = CountDown.init
             , route = Routes.match path
             , contact = ""
+            , window = { width = 0, height = 0 }
             }
     in
         ( newModel, Cmd.none )
@@ -56,5 +59,12 @@ update msg model =
             let
                 modelUpdate =
                     { model | contact = text }
+            in
+                ( modelUpdate, Cmd.none )
+
+        WindowResize size ->
+            let
+                modelUpdate =
+                    { model | window = size }
             in
                 ( modelUpdate, Cmd.none )

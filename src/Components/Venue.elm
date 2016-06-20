@@ -3,18 +3,20 @@ module Components.Venue exposing (view)
 import Html exposing (..)
 import Html.Attributes exposing (style, width, height, attribute, src)
 import Messages exposing (Msg)
+import Window
+import Update exposing (Model)
 
 
-view : Html Msg
-view =
+view : Model -> Html Msg
+view model =
     div []
         [ h1 [] [ text "Center for Visual and Performing Arts" ]
         , h4 [] [ text "Travel Info" ]
         , p [] [ text "Parking is available for free onsite at the Center for Visual and Performing Arts. Click on the link in the map below for specific directions to the venue." ]
         , iframe
             [ src "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2985.4279945435705!2d-87.50520228392293!3d41.55998077924856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8811e0638984d1c5%3A0xc75da4bbc1bab9a1!2sCenter+For+Visual+%26+Performing+Arts!5e0!3m2!1sen!2sus!4v1463348007804"
-            , width 600
-            , height 450
+            , width (max 240 (model.window.width - 20))
+            , height (floor (max 200 (toFloat model.window.height / 2)))
             , attribute "frameborder" "0"
             , attribute "allowfullscreen" "true"
             , style [ ( "border", "0" ) ]

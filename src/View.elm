@@ -33,7 +33,7 @@ view model =
         VenueR () ->
             div []
                 [ Navigation.view model
-                , Venue.view
+                , Venue.view model
                 ]
 
         GalleryR () ->

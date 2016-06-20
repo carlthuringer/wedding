@@ -1,6 +1,7 @@
 module Update exposing (Model, Flags, update, init)
 
 import Ports exposing (pushPath)
+import Task
 import Routes exposing (Sitemap)
 import CountDown exposing (init)
 import Messages exposing (Msg(..))
@@ -29,7 +30,7 @@ init { path } =
             , window = { width = 0, height = 0 }
             }
     in
-        ( newModel, Cmd.none )
+        ( newModel, Task.perform (\_ -> NoOp) WindowResize (Window.size) )
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )

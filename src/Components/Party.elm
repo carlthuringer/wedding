@@ -55,8 +55,9 @@ partyMember name content =
 jill : String
 jill =
     """
-Passionate about teaching music, Jill is an elementary school music teacher in Berwyn, IL and just recently bought a home in Willowbrook, IL. Nicole is thrilled that Jill accepted her proposal to be her Maid of Honor, and they have had fun wedding planning, cruising Pinterest, and going dress shopping together. Jill lives with her cat, Rainey, and enjoys making her own pottery. Being 18 months apart, Nicole and Jill have grown up laughing together, learning together, and occassionally arguing together, but as a result of these disagreements, they have grown closer over the years. Nicole is very proud of the young woman Jill has become and admires her patience and perseverance through the tough times.  
+Passionate about teaching music, Jill is an elementary school music teacher in Berwyn, IL and just recently bought a home in Willowbrook, IL. Nicole is thrilled that Jill accepted her proposal to be her Maid of Honor, and they have had fun wedding planning, cruising Pinterest, and going dress shopping together. Jill lives with her cat, Rainey, and enjoys making her own pottery. 
 
+Being 18 months apart, Nicole and Jill have grown up laughing together, learning together, and occassionally arguing together, but as a result of these disagreements, they have grown closer over the years. Nicole is very proud of the young woman Jill has become and admires her patience and perseverance through the tough times.  
 """
 
 

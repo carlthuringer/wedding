@@ -18,12 +18,12 @@ view =
                     , ( "wrap", True )
                     ]
                 ]
-                [ partyMember "Jill Cammarata" jill
-                , partyMember "Paul Cammarata" paul
-                , partyMember "Joanna Nichols" joanna
-                , partyMember "Kate Slingerland" kate
-                , partyMember "Carolyn Radville" carolyn
-                , partyMember "Beth Lula" beth
+                [ partyMember "Jill Cammarata, Maid of Honor" jill
+                , partyMember "Paul Cammarata, Bridesman" paul
+                , partyMember "Joanna Nichols, Bridesmaid" joanna
+                , partyMember "Kate Slingerland, Bridesmaid" kate
+                , partyMember "Carolyn Radville, Bridesmaid" carolyn
+                , partyMember "Beth Lula, Bridesmaid" beth
                 ]
             ]
         , div []
@@ -34,11 +34,11 @@ view =
                     , ( "wrap", True )
                     ]
                 ]
-                [ partyMember "Brian Thuringer" brian
-                , partyMember "Scott McAnally" scott
-                , partyMember "Dustin Mitchell" dustin
-                , partyMember "David Abdemoulie" david
-                , partyMember "Sarah Killian" sarah
+                [ partyMember "Brian Thuringer, Best Man" brian
+                , partyMember "Scott McAnally, Groomsman" scott
+                , partyMember "Dustin Mitchell, Groomsman" dustin
+                , partyMember "David Abdemoulie, Groomsman" david
+                , partyMember "Sarah Killian, Groomsmaid" sarah
                 ]
             ]
         ]
@@ -64,38 +64,8 @@ Being 18 months apart, Nicole and Jill have grown up laughing together, learning
 paul : String
 paul =
     """
-![placeholder](http://www.fillmurray.com/200/230)
-Lorem markdownum frustraque ille, sufficiunt pugnando terrarum bos regnumque
-iaculo ulterius Psecas valent sed spatio contenta. Regia idem: sequar Iuppiter
-confertur saevaque corrigit audeat tuta parente frutices felicia, at carendum
-iubes per ira erat.
+Eleven years younger than Nicole, Paul has been a joy to watch grow up into the young man he is today. While he will always be Nicole's little brother, Paul will be a freshman at Iowa State University in the fall of 2016. He enjoys fishing, camping, playing video games and umpiring baseball games. 
 
-Gradibus convivia cineres fracta, et quas adspeximus concita. Huic herba,
-Nonacrinas illis, matre Eryx patebat Quas: nec vellet parva neque tumultus
-paulatim firma iactis. Nam maiore; est in nisi; meae arma sua spectator. Colonis
-ego, ut arte insequitur Phoebe abiit.
-
-1. Troianaque doleas excutit
-2. Ille sertaque malorum
-3. Factum illo
-4. Saxo enim
-5. Delere serpentum et deus
-6. Deus auro conchae formae
-
-Hederae virtute verumtamen Ortygie, qua non, qui est officioque, amans mea:
-absens poma urbis cetera quoque. Hasta magnum!
-
-Ora loca, qui sacra templum incubat, alma saltatibus meritorum. Dabat fatalis
-que voti sociis domum admota ab lecta lumina suscipimus primis reversurum
-palmis. Et modo enim sunt est altoque habebat multorumque sequitur: Aeneas
-victoria sequendi cui flamina corpus spes pressitque causa. Vestigia iunget
-erroresque domus superbia, et cutis Aeoliique pastor dedere Agenorides nulla,
-ille Damasicthona generi.
-
-Des pedibus arbiter indice: carina quondam virginis garrula timorque haerentem
-loci oculosque, aestibus ipse, salva a Amorque. Tamen quosque quod vix memores
-timor cruori cetera quodque offensus domos! Notatas virum pendentiaque conde,
-aut ex loca, temperie o abest credita.![placeholder](http://www.fillmurray.com/200/230)
 """
 
 

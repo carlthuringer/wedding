@@ -55,31 +55,8 @@ partyMember name content =
 jill : String
 jill =
     """
-Lorem markdownum sensimus bobus Philomela exhibuit paratu. Nubibus praesepibus
-dictis leto vultu: tabo tundit Eryx tenus, trepidantibus cura regina, nec et.
+Passionate about teaching music, Jill is an elementary school music teacher in Berwyn, IL and just recently bought a home in Willowbrook, IL. Nicole is thrilled that Jill accepted her proposal to be her Maid of Honor, and they have had fun wedding planning, cruising Pinterest, and going dress shopping together. Jill lives with her cat, Rainey, and enjoys making her own pottery. Being 18 months apart, Nicole and Jill have grown up laughing together, learning together, and occassionally arguing together, but as a result of these disagreements, they have grown closer over the years. Nicole is very proud of the young woman Jill has become and admires her patience and perseverance through the tough times.  
 
-Procul pertulit ut nulli a potuit conquerar quid sortite quidem sorore gelido
-foribus; comas deus. Quoque et funda posuit fessa quo et mutato, tigres ille,
-leonis. Inde exsiliantque erat fatebor fertur: Caune mixta Delius foret adeo
-forma, Autolyci quis frugum suoque distat hanc, et. Adhuc simul!
-
-> Illa arvis perspice vidit Achilles in auferat, dependent, umbras! Unus non
-> anni placet Andron sine inimica. Labor posse an est, factoque lugebere et
-> dapes superbus non solae conbibit. Mea quem Eoo silva praemia iacet armo, Luna
-> regnum aquis, ira fuit petebant.
-
-Lacrimantia intra visa: ventis vitam. ![placeholder](http://www.fillmurray.com/200/230) Probor sedes. Ille utque quidem est sic et
-caede. Dum natus non, tot rutilum neque.
-
-> Ora tabuit quarto salientis ventos est sensit umbra. Lumina cum cedere,
-> Corythi poteram mori vagatur conchaeque canis minanti torrentem nam?
-
-Ut surgit corpus, quoque, meum nostri. Nec ista mandata filia; habendus de
-fertur arcum ipse poterat.
-
-Creamur usus famae inanem aliquas hesternos pectora sacra, undis inpia et manu
-dixit; saxo longo creverunt illum corpora. Moles erat factaque alta placidos,
-flavam poma ut quae Troianae, illam arvis cumque suspendit arreptum si mihi.
 """
 
 

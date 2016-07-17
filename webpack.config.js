@@ -4,6 +4,7 @@ var merge             = require( 'webpack-merge' );
 var HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 var autoprefixer      = require( 'autoprefixer' );
 var ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 console.log( 'WEBPACK GO!');
 
@@ -38,7 +39,13 @@ var commonConfig = {
       template: 'src/index.html',
       inject:   'body',
       filename: 'index.html'
-    })
+    }),
+      new CopyWebpackPlugin([
+          {
+              from: "src/assets/*.jpg",
+              to: "assets"
+          }
+])
   ],
 
   postcss: [ autoprefixer( { browsers: ['last 2 versions'] } ) ]
@@ -75,7 +82,7 @@ if ( TARGET_ENV === 'development' ) {
             'style-loader',
             'css-loader',
             'postcss-loader',
-            'sass-loader'
+              'sass-loader'
           ]
         }
       ]

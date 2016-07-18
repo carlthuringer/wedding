@@ -10,14 +10,20 @@
     // Render out to the destination
 
     let options = JSON.parse(fs.readFileSync(root('script', 'photos.json')).toString());
-    console.log(options);
     // first let's just copy the photo
-    options.photos.forEach(function(photo) {
+    let photos = options.photos.map(function(photo) {
         let base = path.basename(photo.file);
         // Just copy file
         fs.createReadStream(root('.', photo.file)).pipe(fs.createWriteStream(root(options.destination, base)));
+        return {
+            src: path.join("assets", base),
+            srcset: [path.join("assets", base) + " 100w"].join(',')
+        };
     });
 
-    // Then try the template...
+    let template = fs.readFileSync(root('script', 'photos.elm.ejs'));
+    let compiled = _.template(template);
+    let rendered = compiled({ photos: photos });
+    fs.writeFileSync(root('src', 'Photos.elm'), rendered);
 
 })();

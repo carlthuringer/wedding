@@ -1,8 +1,15 @@
-module Photos
+module Photos exposing (..)
 
-alias SrcPath = String
-alias SrcSet = String
+type alias SrcPath = String
+type alias SrcSet = String
+type alias Photos = List (SrcPath, SrcSet)
 
+getSrc : (SrcPath, SrcSet) -> SrcPath
+getSrc (path, _) =
+    path
+
+photos : List (SrcPath, SrcSet)
 photos =
-  [("assets/CN-10.jpg", "assets/CN-10.jpg 100w")]
+    [<%= photos.map(function(photo) { return "(\"" + photo.src + "\", \"" + photo.srcset + "\")"; }).join("\n    ,") %>]
+
 

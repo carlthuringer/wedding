@@ -1,11 +1,15 @@
 {
-    "destination": "assets",
+    "destination": "src/assets",
     "template": "photos.elm.ejs",
     "sizes": ["320", "700", "1250"],
     "photos": [
         {
             "file": "photos/CN-10.jpg",
             "caption": "Just a caption"
+        },
+        {
+            "file": "photos/CN-11.jpg",
+            "caption": "Just a second caption"
         }
     ]
 }

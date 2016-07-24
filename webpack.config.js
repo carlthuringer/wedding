@@ -42,7 +42,7 @@ var commonConfig = {
     }),
       new CopyWebpackPlugin([
           {
-              from: "src/assets/*.jpg",
+              from: "src/assets/**/*.jpg",
               to: "assets"
           }
 ])

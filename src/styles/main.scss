@@ -142,7 +142,25 @@ a {
     border-radius: 8px;
 }
 
-.gallery-image img {
-    width: 100px;
-    height: 100px;
+.gallery {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100vw;
+    font-size: 0;
+    max-height: 800px;
 }
+
+.gallery img {
+    width: 33.3%;
+    transition: .8s opacity;
+}
+
+.gallery:hover img {
+    opacity: 0.3;
+}
+
+.gallery:hover img:hover {
+    opacity: 1;
+}
+

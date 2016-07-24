@@ -11,13 +11,13 @@ view =
     div []
         [ h1 [] [ text "Gallery" ]
         , p [] [ text "Photo gallery coming soon!" ]
-        , div [] (toGallery photos)
+        , div [ class "gallery" ] (toGallery photos)
         ]
 
 toGallery : (Photos.Photos -> List (Html Msg))
 toGallery =
     let toImage (path, set) =
-        div [ class "gallery-image" ] [ img [ src path, srcSet set ] [] ]
+        img [ src path, srcSet set ] []
     in List.map toImage
 
 

@@ -3,31 +3,33 @@
   const root = require('./helpers.js').root;
   const path = require('path');
   const _ = require('lodash');
-  const fs = require('fs-extra');
+  const fs = require('fs-extra'); // Like fs, but moreso. https://www.npmjs.com/package/fs-extra#ensuresymlinksrcpath-dstpath-type-callback
+  const Jimp = require('jimp'); // JS Image Processing lib.
   // read teh config file to get the list of photo paths and their properties
   // Convert the photos and write them to the target directory
   // Load the template
   // Render out to the destination
 
+  // Clear the photos out of the asset directory
+  fs.remove(root('src', 'assets'));
   let options = JSON.parse(fs.readFileSync(root('script', 'photos.json')).toString());
-  // Make sure the destination directory exists
-
-  fs.mkdirsSync(options.destination);
 
   let photos = options.photos.map(function(photo) {
     let base = path.basename(photo.file);
-    // This just copies the file.
-    let infile = fs.createReadStream(root('.', photo.file));
-    // Now we'll make a copy for each size. but we don't actually resize yet.
-    options.sizes.forEach(function(size) {
-      infile.pipe(writeFile(base + "." + size));
+    let srcSet = options.sizes.map(function(size) {
+      let destPath = size.toString() + '/' + base;
+      fs.mkdirsSync(path.dirname(root('src', 'assets', destPath)));
+      Jimp.read(photo.file).then(function(p) {
+        p.resize(Jimp.AUTO, size)
+          .quality(80)
+          .write(root('src', 'assets', destPath));
+      });
+      return ['/assets/' + destPath, size.toString() + 'w'];
     });
 
-    // Though first perhaps we can just write files.
-
     return {
-      src: path.join("assets", base),
-      srcset: [path.join("assets", base) + " 100w"].join(',')
+      src: srcSet[0][0],
+      srcset: srcSet.map(function(pathPair) { return pathPair.join(' '); }).join(',')
     };
   });
 
@@ -35,9 +37,4 @@
   let compiled = _.template(template);
   let rendered = compiled({ photos: photos });
   fs.writeFileSync(root('src', 'Photos.elm'), rendered);
-
-  function writeFile(fileName) {
-    return fs.createWriteStream(root(options.destination, fileName));
-  }
-
 })();

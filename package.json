@@ -12,7 +12,8 @@
   "scripts": {
     "start": "webpack-dev-server --hot --inline --content-base src/",
     "build": "rimraf dist && webpack",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "photos": "node script/photos.js"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
@@ -23,6 +24,7 @@
     "elm-webpack-loader": "^3.0.3",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
+    "fs-extra": "^0.30.0",
     "html-webpack-plugin": "^2.17.0",
     "jimp": "^0.2.24",
     "lodash": "^4.13.1",

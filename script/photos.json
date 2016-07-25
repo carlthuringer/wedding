@@ -4,16 +4,12 @@
   "sizes": [320, 700, 1250],
   "photos": [
     {
-      "file": "photos/CN-3.jpg",
+      "file": "photos/CN.jpg",
       "caption": "Just a caption"
     },
     {
       "file": "photos/CN-11.jpg",
       "caption": "Just a second caption"
-    },
-    {
-      "file": "photos/CN.jpg",
-      "caption": "Just a caption"
     },
     {
       "file": "photos/CN-4.jpg",

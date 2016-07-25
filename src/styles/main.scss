@@ -144,23 +144,16 @@ a {
 
 .gallery {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    height: 100vw;
+    width: 100%;
     font-size: 0;
-    max-height: 800px;
+    justify-content: center;
 }
 
 .gallery img {
-    width: 33.3%;
+    height: 80vh;
     transition: .8s opacity;
-}
-
-.gallery:hover img {
-    opacity: 0.3;
-}
-
-.gallery:hover img:hover {
-    opacity: 1;
+    margin: 5px 8px;
 }
 

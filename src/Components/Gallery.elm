@@ -10,7 +10,6 @@ view : Html Msg
 view =
     div []
         [ h1 [] [ text "Gallery" ]
-        , p [] [ text "Photo gallery coming soon!" ]
         , div [ class "gallery" ] (toGallery photos)
         ]
 

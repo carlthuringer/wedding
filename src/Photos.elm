@@ -1,23 +1,37 @@
 module Photos exposing (..)
 
+import Html exposing (Attribute, Html, img)
+import Html.Attributes exposing (src)
+import Messages exposing (Msg)
+
 type alias SrcPath = String
 type alias SrcSet = String
 type alias Photos = List (SrcPath, SrcSet)
+
+toImg : (SrcPath, SrcSet) -> Html Msg
+toImg (path, set) =
+    img [ src path, srcSet set ] []
+
+srcSet : String -> Html.Attribute Msg
+srcSet srcset =
+    Html.Attributes.attribute "srcSet" srcset
 
 getSrc : (SrcPath, SrcSet) -> SrcPath
 getSrc (path, _) =
     path
 
-photos : List (SrcPath, SrcSet)
-photos =
-    [("/assets/320/CN.jpg", "/assets/320/CN.jpg 320w,/assets/700/CN.jpg 700w,/assets/1250/CN.jpg 1250w")
-    ,("/assets/320/CN-11.jpg", "/assets/320/CN-11.jpg 320w,/assets/700/CN-11.jpg 700w,/assets/1250/CN-11.jpg 1250w")
-    ,("/assets/320/CN-4.jpg", "/assets/320/CN-4.jpg 320w,/assets/700/CN-4.jpg 700w,/assets/1250/CN-4.jpg 1250w")
-    ,("/assets/320/CN-7.jpg", "/assets/320/CN-7.jpg 320w,/assets/700/CN-7.jpg 700w,/assets/1250/CN-7.jpg 1250w")
-    ,("/assets/320/CN-37.jpg", "/assets/320/CN-37.jpg 320w,/assets/700/CN-37.jpg 700w,/assets/1250/CN-37.jpg 1250w")
-    ,("/assets/320/CN-41.jpg", "/assets/320/CN-41.jpg 320w,/assets/700/CN-41.jpg 700w,/assets/1250/CN-41.jpg 1250w")
-    ,("/assets/320/CN-49.jpg", "/assets/320/CN-49.jpg 320w,/assets/700/CN-49.jpg 700w,/assets/1250/CN-49.jpg 1250w")
-    ,("/assets/320/CN-72.jpg", "/assets/320/CN-72.jpg 320w,/assets/700/CN-72.jpg 700w,/assets/1250/CN-72.jpg 1250w")
-    ,("/assets/320/CN-85.jpg", "/assets/320/CN-85.jpg 320w,/assets/700/CN-85.jpg 700w,/assets/1250/CN-85.jpg 1250w")]
+engagement =
+    { cn11 = ("/assets/engagement/CN-11_320.jpg", "/assets/engagement/CN-11_320.jpg 320w,/assets/engagement/CN-11_700.jpg 700w,/assets/engagement/CN-11_1250.jpg 1250w")
+    , cn19 = ("/assets/engagement/CN-19_320.jpg", "/assets/engagement/CN-19_320.jpg 320w,/assets/engagement/CN-19_700.jpg 700w,/assets/engagement/CN-19_1250.jpg 1250w")
+    , cn37 = ("/assets/engagement/CN-37_320.jpg", "/assets/engagement/CN-37_320.jpg 320w,/assets/engagement/CN-37_700.jpg 700w,/assets/engagement/CN-37_1250.jpg 1250w")
+    , cn4 = ("/assets/engagement/CN-4_320.jpg", "/assets/engagement/CN-4_320.jpg 320w,/assets/engagement/CN-4_700.jpg 700w,/assets/engagement/CN-4_1250.jpg 1250w")
+    , cn41 = ("/assets/engagement/CN-41_320.jpg", "/assets/engagement/CN-41_320.jpg 320w,/assets/engagement/CN-41_700.jpg 700w,/assets/engagement/CN-41_1250.jpg 1250w")
+    , cn49 = ("/assets/engagement/CN-49_320.jpg", "/assets/engagement/CN-49_320.jpg 320w,/assets/engagement/CN-49_700.jpg 700w,/assets/engagement/CN-49_1250.jpg 1250w")
+    , cn7 = ("/assets/engagement/CN-7_320.jpg", "/assets/engagement/CN-7_320.jpg 320w,/assets/engagement/CN-7_700.jpg 700w,/assets/engagement/CN-7_1250.jpg 1250w")
+    , cn72 = ("/assets/engagement/CN-72_320.jpg", "/assets/engagement/CN-72_320.jpg 320w,/assets/engagement/CN-72_700.jpg 700w,/assets/engagement/CN-72_1250.jpg 1250w")
+    , cn85 = ("/assets/engagement/CN-85_320.jpg", "/assets/engagement/CN-85_320.jpg 320w,/assets/engagement/CN-85_700.jpg 700w,/assets/engagement/CN-85_1250.jpg 1250w")
+    , cn = ("/assets/engagement/CN_320.jpg", "/assets/engagement/CN_320.jpg 320w,/assets/engagement/CN_700.jpg 700w,/assets/engagement/CN_1250.jpg 1250w")
+    }
+
 
 

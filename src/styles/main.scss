@@ -41,6 +41,10 @@ h2, h3, h4, h5, h6 {
     }
 }
 
+.wedding-main img {
+    width: 30vw;
+}
+
 .rose-gold { background-color: $rose_gold }
 .peach { background-color: $peach }
 .serenity-blue { background-color: $serenity_blue }
@@ -153,7 +157,15 @@ a {
 
 .gallery img {
     height: 80vh;
-    transition: .8s opacity;
     margin: 5px 8px;
+}
+
+/* Portrait */
+@media only screen 
+  and (max-width: 480px) {
+    .gallery img {
+        height: auto;
+        width: 80vh;
+    }
 }
 

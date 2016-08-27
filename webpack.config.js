@@ -40,12 +40,13 @@ var commonConfig = {
       inject:   'body',
       filename: 'index.html'
     }),
-      new CopyWebpackPlugin([
-          {
-              from: "src/assets/**/*.jpg",
-              to: "assets"
-          }
-])
+    new CopyWebpackPlugin([
+      {
+        context: 'src/assets',
+        from: '**/*.jpg',
+        to: 'assets/'
+      }
+    ])
   ],
 
   postcss: [ autoprefixer( { browsers: ['last 2 versions'] } ) ]
@@ -82,7 +83,7 @@ if ( TARGET_ENV === 'development' ) {
             'style-loader',
             'css-loader',
             'postcss-loader',
-              'sass-loader'
+            'sass-loader'
           ]
         }
       ]
@@ -125,9 +126,9 @@ if ( TARGET_ENV === 'production' ) {
 
       // minify & mangle JS/CSS
       new webpack.optimize.UglifyJsPlugin({
-          minimize:   true,
-          compressor: { warnings: false }
-          // mangle:  true
+        minimize:   true,
+        compressor: { warnings: false }
+        // mangle:  true
       })
     ]
 

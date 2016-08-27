@@ -1,43 +1,6 @@
 {
+  "source": "assets",
   "destination": "src/assets",
   "template": "photos.elm.ejs",
-  "sizes": [320, 700, 1250],
-  "photos": [
-    {
-      "file": "photos/CN.jpg",
-      "caption": "Just a caption"
-    },
-    {
-      "file": "photos/CN-11.jpg",
-      "caption": "Just a second caption"
-    },
-    {
-      "file": "photos/CN-4.jpg",
-      "caption": "Just a caption"
-    },
-    {
-      "file": "photos/CN-7.jpg",
-      "caption": "Just a caption"
-    },
-    {
-      "file": "photos/CN-37.jpg",
-      "caption": "Just a caption"
-    },
-    {
-      "file": "photos/CN-41.jpg",
-      "caption": "Just a caption"
-    },
-    {
-      "file": "photos/CN-49.jpg",
-      "caption": "Just a caption"
-    },
-    {
-      "file": "photos/CN-72.jpg",
-      "caption": "Just a caption"
-    },
-    {
-      "file": "photos/CN-85.jpg",
-      "caption": "Just a caption"
-    }
-  ]
+  "sizes": [320, 700, 1250]
 }

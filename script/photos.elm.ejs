@@ -1,15 +1,28 @@
 module Photos exposing (..)
 
+import Html exposing (Attribute, Html, img)
+import Html.Attributes exposing (src)
+import Messages exposing (Msg)
+
 type alias SrcPath = String
 type alias SrcSet = String
 type alias Photos = List (SrcPath, SrcSet)
 
+toImg : (SrcPath, SrcSet) -> Html Msg
+toImg (path, set) =
+    img [ src path, srcSet set ] []
+
+srcSet : String -> Html.Attribute Msg
+srcSet srcset =
+    Html.Attributes.attribute "srcSet" srcset
+
 getSrc : (SrcPath, SrcSet) -> SrcPath
 getSrc (path, _) =
     path
-
-photos : List (SrcPath, SrcSet)
-photos =
-    [<%= photos.map(function(photo) { return "(\"" + photo.src + "\", \"" + photo.srcset + "\")"; }).join("\n    ,") %>]
+<% for(var fn in photos) { %>
+<%= fn %> =
+    { <%= _.map(photos[fn], function(value, key) { return `${_.camelCase(key)} = ("${value.src}", "${value.srcSet}")` }).join('\n    , ') %>
+    }
+<% } %>
 
 

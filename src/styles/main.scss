@@ -5,9 +5,9 @@ $medium_grey: rgb(152, 150, 164);
 $ivory: rgb(229, 225, 223);
 $nearlyWhite: rgb(250, 250, 250);
 $darkCharcoal: rgb(57, 57, 57);
+$pinkyCoralSomething: rgb(255, 168, 148);
 
 body {
-    background-color: $nearlyWhite;
     color: $darkCharcoal;
     font-family: 'Open Sans', sans-serif;
     font-size: 12pt;
@@ -97,7 +97,7 @@ nav {
     li > .active
     {
         transition: 2s all;
-        background-color: darken($serenity-blue, 30%);
+        background-color: $pinkyCoralSomething;
         color: $nearlyWhite;
     }
 }
@@ -121,13 +121,13 @@ h1 {
 }
 
 a {
-    color: darken($serenity-blue, 30%);
+    color: $pinkyCoralSomething;
     font-weight: 800;
     text-decoration: none;
     &:hover {
         text-decoration: underline;
         transition: 1s all;
-        color: $serenity-blue;
+        color: $pinkyCoralSomething;
     }
 }
 
@@ -143,7 +143,7 @@ a {
 .contact-button {
     margin: .5em 0;
     padding: .5em;
-    background-color: darken($serenity-blue, 30%);
+    background-color: $pinkyCoralSomething;
     color: $nearlyWhite;
     border-radius: 8px;
 }

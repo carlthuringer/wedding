@@ -33,5 +33,13 @@ engagement =
     , cn = ("/assets/engagement/CN_320.jpg", "/assets/engagement/CN_320.jpg 320w,/assets/engagement/CN_700.jpg 700w,/assets/engagement/CN_1250.jpg 1250w")
     }
 
+party =
+    { brian = ("/assets/party/brian_320.jpg", "/assets/party/brian_320.jpg 320w,/assets/party/brian_700.jpg 700w,/assets/party/brian_1250.jpg 1250w")
+    , dave = ("/assets/party/dave_320.jpg", "/assets/party/dave_320.jpg 320w,/assets/party/dave_700.jpg 700w,/assets/party/dave_1250.jpg 1250w")
+    , dustin = ("/assets/party/dustin_320.jpg", "/assets/party/dustin_320.jpg 320w,/assets/party/dustin_700.jpg 700w,/assets/party/dustin_1250.jpg 1250w")
+    , sarah = ("/assets/party/sarah_320.jpg", "/assets/party/sarah_320.jpg 320w,/assets/party/sarah_700.jpg 700w,/assets/party/sarah_1250.jpg 1250w")
+    , scott = ("/assets/party/scott_320.jpg", "/assets/party/scott_320.jpg 320w,/assets/party/scott_700.jpg 700w,/assets/party/scott_1250.jpg 1250w")
+    }
+
 
 

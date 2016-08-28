@@ -6,7 +6,8 @@ import Messages exposing (Msg)
 
 type alias SrcPath = String
 type alias SrcSet = String
-type alias Photos = List (SrcPath, SrcSet)
+type alias Photos = List Photo
+type alias Photo = (SrcPath, SrcSet)
 
 toImg : (SrcPath, SrcSet) -> Html Msg
 toImg (path, set) =

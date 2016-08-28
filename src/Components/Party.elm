@@ -4,7 +4,11 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Markdown exposing (toHtml)
 import Messages exposing (Msg)
+import Photos exposing (Photo, toImg, party)
 
+
+filler =
+    ("http://www.fillmurray.com/200/230", "http://www.fillmurray.com/200/230 300w")
 
 view : Html Msg
 view =
@@ -18,12 +22,12 @@ view =
                     , ( "wrap", True )
                     ]
                 ]
-                [ partyMember "Jill Cammarata, Maid of Honor" jill
-                , partyMember "Paul Cammarata, Bridesman" paul
-                , partyMember "Joanna Nichols, Bridesmaid" joanna
-                , partyMember "Kate Slingerland, Bridesmaid" kate
-                , partyMember "Carolyn Radville, Bridesmaid" carolyn
-                , partyMember "Beth Lula, Bridesmaid" beth
+                [ partyMember "Jill Cammarata, Maid of Honor" filler jill
+                , partyMember "Paul Cammarata, Bridesman" filler paul
+                , partyMember "Joanna Nichols, Bridesmaid" filler joanna
+                , partyMember "Kate Slingerland, Bridesmaid" filler kate
+                , partyMember "Carolyn Radville, Bridesmaid" filler carolyn
+                , partyMember "Beth Lula, Bridesmaid" filler beth
                 ]
             ]
         , div []
@@ -34,20 +38,21 @@ view =
                     , ( "wrap", True )
                     ]
                 ]
-                [ partyMember "Brian Thuringer, Best Man" brian
-                , partyMember "Scott McAnally, Groomsman" scott
-                , partyMember "Dustin Mitchell, Groomsman" dustin
-                , partyMember "David Abdemoulie, Groomsman" david
-                , partyMember "Sarah Killian, Groomsmaid" sarah
+                [ partyMember "Brian Thuringer, Best Man" party.brian brian
+                , partyMember "Scott McAnally, Groomsman" party.scott scott
+                , partyMember "Dustin Mitchell, Groomsman" party.dustin dustin
+                , partyMember "David Abdemoulie, Groomsman" party.dave david
+                , partyMember "Sarah Killian, Groomsmaid" party.sarah sarah
                 ]
             ]
         ]
 
 
-partyMember : String -> String -> Html Msg
-partyMember name content =
+partyMember : String -> Photo -> String -> Html Msg
+partyMember name image content =
     article [ class "three-columns" ]
         [ h3 [] [ text name ]
+        , toImg image
         , toHtml [] content
         ]
 
@@ -157,94 +162,64 @@ sorores ademptum, montes nitidum pinu Latinum colebatur ignes.
 brian : String
 brian =
     """
-Individualistic and rebellious, yet mild-mannered, the artist challenges our
-sensibilities and expectations. Whether in his effort effect positive change in
-the world around him, a surreal and inquisitive artistic expression, or a ravenous
-truth-seeking debate, Brian seeks to know and be understood by those he loves.
+Born and Raised in Michigan and Now I live in Mesa, Arizona. I work remotely for a company called Workinman Interactive designing artwork/graphics for various client-based projects and freelance art when there is time.
+I was also living in Rochester, NY for quite a few years for college education and post-college work.
 
-He passes the time hiking in the parks around Mesa, Arizona where he has lived
-with his partner Jillian for two years. He is just as avaricious when exploring the
-natural world as elsewhere, and as he masters its challenges he is also humbled.
-Brian has also grown in respect and responsibility with his employer, Workinman,
-where he lends his sharp, striking style to their interactive media projects.
-
-Brian hopes to one day grow his freelance art and design work to full-time,
-cultivate his professional network, and work high-profile and exciting projects
-in the concept art community. Carl is very proud of his younger brother and loves him
-for the way Brian challenges him every day, his maturity, and indomitable spirit.
+My favorite things are:
+Metal music, Iced Coffee, hiking, video games, photography and art. I enjoy doing freelance art projects for metal bands and finished several commissions recently.
 """
 
 
 scott : String
 scott =
     """
-Lorem markdownum, me senex artificum demit regnat potens; quae quoque esse
-vertice. Pollice cecidisse pectora exaudire gravitas claudit vestigia letum et
-Pandion accipe, inimicos nescit pericula possunt, fidissima. Loricamque dixit,
-illi iste nisi utraque parte, et pavet liquescunt quidem. Exercet enim via
-quibus, tua obvertit latus una fores.
+I've known Carl since... well... birth! We have been cousins for 27 years and have shared a love for all things tech.
 
-- Et cupidine regnumque sedant castique
-- Ab dixere iugulatus introrsus ut mugitu imitatur
-- Trabe fele emi cruore ![placeholder](http://www.fillmurray.com/200/230)
-- Cuius alto
-- Sic atque quam sit
-- Positis inquit
+I worked as a high school social studies teacher for the past three years in South Carolina but am now taking on a new role as a stay at home father as my family moved back to Birmingham Michigan this past summer. My daughter Addison was born in January and needless to say she (happily) fills my time.
+
+While on break from my teaching career I am still very involved in teaching high school marching band and [drum corps](http://goo.gl/knwDqG). I am looking forward to joining Carl and Nicole and their family and friends for this joyous occasion!
 """
 
 
 dustin : String
 dustin =
     """
-Protinus viae Helicen nitentibus, viro suis sanguine ebur, ille crimen; aut
-pollice, in iuventa. Postquam et rabies profectura turba. Quam ait confusa
-laudant nihil.
+At the age of 16, I was bitten by a radioactive spider, and...
 
-1. Iam aut inmeritam anxia
-2. Acuta torva
-3. Haud sim sed inmitibus nunc
-4. Suam magnanimi vidi
-5. Remis vestemque amorem florentia finitimi summa pronus
+Whoops, that was the parallel universe!
 
-Tristis esse cum! Liquidis agros agit, decrescunt cecidere ipsaque nunc iubet
-admonita fudit nodoso.
+The real me, from THIS universe:
 
-1. Pariter si erigitur parent nitidissimus erit
-2. Sublime soluti
-3. Generum tibi illis tegebant obscura
-4. Pigetque et ira factum crinalem pluma
-5. Sanguis benignior et mentis ripae salutifera longa
+I'm a 33 year old engineer, living in Troy Mi. Despite the crazy weather, I do love my home state of Michigan!
+I have two children. One is 13 years old and her name is Aeriana. The other is 6 months old (at the time of me writing this), and her name is Lucy. I'm happily married to Lucy's mom!
+
+In between working and family life, I love to play video games, and train with weights.
+I was lucky enough to have Carl stand up in my wedding, and I'm completely thrilled to be standing up in his!!
 """
 
 
 david : String
 david =
     """
-Insopitumque sine sanguine iacent virgo faticinasque nefas, non sum latices
-terruit positi. Et sidera intus, manu figit bracchia iustissima dant nimiumque
-adeo. Tuumque tantumque praemia nostras adamante excidit.
+Who am I? I'm David, a strength coach and owner of Chicago Strength & Conditioning.
 
-![placeholder](http://www.fillmurray.com/200/230)Nata tum; circumdata ubi, cessit sed vestrae avidum. Violas tot potior patiemur
-colubris mihi mactare omnis. Fuit causa ferens, pars notatas cuius, sperare
-relictus pthiam fossa tamen. Te quod vocato Horae, percussere necis. Vox male,
-ego canos: ora declivis ignavus iungunt, Hic vires!
+I've known Carl for the past 3 years since we worked together at Groupon (I also tell computers what to do, and they listen). Carl trained with me for a year and competed in his first competition last October. Carl's strength basically quadrupled in that time.
+
+I also have a great passion for board games. Carl, Nicole, Megan and I have spent many weekends playing games over the past couple of years.
 """
 
 
 sarah : String
 sarah =
     """
-![placeholder](http://www.fillmurray.com/200/230)
-Lorem markdownum hanc solis ignibus, si sed domum tellure minorem Troiae rari!
-Est fugias palus nec nullis, gemitu deprensa clipeus matrona sudataque nulla
-animoque. Et undis procubuit, tenet? Primum ille mea ille harundine auctor!
+I live in Royal Oak, MI. I'm a Medical Laboratory Scientist and used to work as a Medical Microbiologist. Right now, I'm still working in the Microbiology field, filling a Business Analyst role at a company in Ann Arbor, MI.
 
-- Est per Saturnius morte
-- Aliud angues medioque et venisset coniugis arvaque
-- Commendat Hylonome turba inpulsum
+My favorite things are:
+Coffee, mixing cocktails for friends, video games, visual design, and science!
+In my free time I volunteer for my professional organization (American Society for Clinical Laboratory Science), build websites (I just did the political signage and website for my father's local campaign - he won!), and tend my garden.
 
-Madidis heros cavata spatium, aut vicibus, digna fessa eras crines, dum lucos.
-Amoris videres in lina obsessum fuerat, cum, ponere; ego omnia Pittheam erit,
-pavefactaque. Fata non percurrens nunc; nunc admissum, sortis altera tulimus
-demittant.
+I first met Carl at Eastern Michigan University. I was the manager of the video game store on campus. Carl walked into the store one day (fresh back from his trip to Japan) and everyone said he looked like Jesus. o.O
+We ended up having a close-knit group of friends thanks to that video game store. We're all still friends today!
+
+Carl is one of the few people on this Earth that can have those lucid late-night conversations over a beer - most definitely one of the things I love most about Carl. Oh, and that we tend to have the same taste in video games!
 """

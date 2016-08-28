@@ -54,6 +54,7 @@ article {
     margin: 0 .5rem 1rem .5rem;
     img {
         float: right;
+        width: 17rem;
     }
     ::after {
         visibility: hidden;
@@ -166,6 +167,10 @@ a {
     .gallery img {
         height: auto;
         width: 80vh;
+    }
+    article img {
+        float: initial;
+        width: 100%;
     }
 }
 

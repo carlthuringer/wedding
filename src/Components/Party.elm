@@ -22,12 +22,12 @@ view =
                     , ( "wrap", True )
                     ]
                 ]
-                [ partyMember "Jill Cammarata, Maid of Honor" filler jill
-                , partyMember "Paul Cammarata, Bridesman" filler paul
-                , partyMember "Joanna Nichols, Bridesmaid" filler joanna
-                , partyMember "Kate Slingerland, Bridesmaid" filler kate
-                , partyMember "Carolyn Radville, Bridesmaid" filler carolyn
-                , partyMember "Beth Lula, Bridesmaid" filler beth
+                [ partyMember "Jill Cammarata, Maid of Honor" party.jill jill
+                , partyMember "Paul Cammarata, Bridesman" party.paul paul
+                , partyMember "Joanna Nichols, Bridesmaid" party.joanna joanna
+                , partyMember "Kate Slingerland, Bridesmaid" party.kate kate
+                , partyMember "Carolyn Radville, Bridesmaid" party.carolyn carolyn
+                , partyMember "Beth Lula, Bridesmaid" party.beth beth
                 ]
             ]
         , div []
@@ -60,16 +60,16 @@ partyMember name image content =
 jill : String
 jill =
     """
-Passionate about teaching music, Jill is an elementary school music teacher in Berwyn, IL and just recently bought a home in Willowbrook, IL. Nicole is thrilled that Jill accepted her proposal to be her Maid of Honor, and they have had fun wedding planning, cruising Pinterest, and going dress shopping together. Jill lives with her cat, Rainey, and enjoys making her own pottery. 
+Passionate about teaching music, Jill is an elementary school music teacher in Berwyn, IL and just recently bought a home in Willowbrook, IL. Nicole is thrilled that Jill accepted her proposal to be her Maid of Honor, and they have had fun wedding planning, cruising Pinterest, and going dress shopping together. Jill lives with her cat, Rainey, and enjoys making her own pottery.
 
-Being 18 months apart, Nicole and Jill have grown up laughing together, learning together, and occassionally arguing together, but as a result of these disagreements, they have grown closer over the years. Nicole is very proud of the young woman Jill has become and admires her patience and perseverance through the tough times.  
+Being 18 months apart, Nicole and Jill have grown up laughing together, learning together, and occassionally arguing together, but as a result of these disagreements, they have grown closer over the years. Nicole is very proud of the young woman Jill has become and admires her patience and perseverance through the tough times.
 """
 
 
 paul : String
 paul =
     """
-Eleven years younger than Nicole, Paul has been a joy to watch grow up into the young man he is today. While he will always be Nicole's little brother, Paul will be a freshman at Iowa State University in the fall of 2016. He enjoys fishing, camping, playing video games and umpiring baseball games. 
+Eleven years younger than Nicole, Paul has been a joy to watch grow up into the young man he is today. While he will always be Nicole's little brother, Paul will be a freshman at Iowa State University in the fall of 2016. He enjoys fishing, camping, playing video games and umpiring baseball games.
 
 """
 
@@ -77,85 +77,30 @@ Eleven years younger than Nicole, Paul has been a joy to watch grow up into the 
 joanna : String
 joanna =
     """
-In alter possunt totidem. Iamque cervixque vellem Nessus indagine miranti
-volubilibus exilio; cum officio cremabo permiscuit coniectos vixque?
-
-- Nunc hic mortali tum solita
-- Tumida postquam
-- Mihi consonus
-- Senis relevare
-- Labefactum indutus
-
-Mellaque septem imi tristis vertice clamat nubila probat ait induerat in domos:
-deformes. Insistit notissima, desint rata occupat fuerit si, favilla est vultus;
-arbor manet possem. ![placeholder](http://www.fillmurray.com/200/230)Est fore, ultor damno. Vulnere cornua, est vertice procul
-qua induitur Austro et tectos Cyllenide referrem, in vicem. Conscia est conantur
-fere; sui arbore valens?
+Joanna and Nicole also met their freshman year of college at Drake University, where they lived on the same floor—just two doors down from each other to be exact. Admiring Joanna’s creativity and thoughtfulness, Nicole is so happy to have met Joanna a little over 10 years ago, and they’ve been great friends ever since. Nicole is so proud of Joanna for recently completing her master’s degree from DePaul and feels so lucky to have such a great friend as her. She is so thankful that Joanna will be standing up for Nicole on her wedding day.
 """
 
 
 kate : String
 kate =
     """
-Lorem markdownum, est fletus membra pastores gemina, dis nexis est conluerant
-fame dulcedine adsumptumque tenus! Terris populum dabunt patrium rostro iubet,
-torvo Tyrium deorum. Ense tamen. Est felix, est et puellari non care totoque
-erat!
-
-> Desunt amorem undis forte oblita navis transtra ictu ieiunia certa origo;
-> praecipuum mariti, abunde ne vasti sustinet. Coniunx qui armos Livor; ab
-> flumina molarem ac sint, reppulit et intus. Sidera erit; olorinis sua abit
-> pennae reliquerat crescunt ursae te. Perstet nostra: artes ubi atque agendo,
-> gradus Cecropidae populo celerem invecta studiumque facies referentia mentes!
-> Attonitos feci; fuit vidit, Titania sole sic, opem sis furens Achilles, quem
-> primo creatus.
-
-![placeholder](http://www.fillmurray.com/200/230) Data profugo, virgo Peleus inania. Nec parma, corpora nurus placerent potuisse
-tanti rabie artifices velamina nitenti. Domus forma. Et gramen, utrumque in
-Prima.
+Kate and Nicole met freshman year of college at Drake University in Des Moines, IA. While taking very different classes during their time at Drake (Kate majored in biochemistry, while Nicole majored in journalism and graphic design), Nicole and Kate enjoyed their many road trips together to and from the Chicagoland area to Des Moines.
+After finishing her master’s degree at the University of Minnesota, Kate moved back to Chicago, when she and Nicole became even closer friends. Nicole is so proud to have a friend like Kate and is thrilled to have her stand up as a bridesmaid.
 """
 
 
 carolyn : String
 carolyn =
     """
-1. Quirini te Dixerat exitio murmurat pudicos posset
-2. Detractare vomit errare cohibentem
-3. Quae harundine
-4. Hostes uno quod taceam fatale
-
-Scylaceaque Liber: hinc altis dedisse disertus solet, lacrimasque tecto ardent:
-secutae. Si Ennomon flammam videam nocuisse dimittit Aonides iniuria carinis
-radicibus atque venantum ambitione femina.
-
-- Adest solent somniferam harundine
-- Violentaque pater vocari
-- Tibi ipsosque dum quicquam
-- Quid possis regnum frequens se victa sint
-
-![placeholder](http://www.fillmurray.com/200/230) Cuius confodit Ceres quoque donis; annos idem, reliquit per; sum erant facibus
-oppidaque laetus facit. Est haec sic, volucres radice; gratia nec nomine solus
-non istum, ab dictis protinus desine ducebat. Pati mensis in Alcyone Macareus
-quoque, ense non, in cvrrvs et caedibus, et debueram. Lacessas Serpens caput,
-sorores ademptum, montes nitidum pinu Latinum colebatur ignes.
-
-Inque hunc hic candescere germana, ne ore urbesque quae est. Ne parat maris, ore
-usque siqua, scelerata pars gentes, cuspis hoc Tonanti terras, retexite. Solis
-accipiunt stabula soporem perire date natae sequiturque omnis quidem Iovis et
-terrore septem obnoxia Troiaeque. Pro invida arbitrium Dianae qua vidit Cyclopis
-bracchiaque Pentheus sine, ille inpune virum Pallorque sui victoremque.
+Carolyn and Nicole have been friends since they were little girls. They met when Carolyn’s family moved in across the street from Nicole’s family on Kensington Avenue in La Grange Park, IL, and they’ve been friends ever since (20+ years!). While they went to different elementary schools and colleges, they attended the same high school, where they swam for the Lyons Townships girls swim team for four years.
+Nicole is proud to have Carolyn has a lifelong friend, and is honored to have her stand up for her as a bridesmaid.
 """
 
 
 beth : String
 beth =
     """
-Something something something...
-![placeholder](http://www.fillmurray.com/200/230) Cuius confodit Ceres quoque donis; annos idem, reliquit per; sum erant facibus
-oppidaque laetus facit. Est haec sic, volucres radice; gratia nec nomine solus
-non istum, ab dictis protinus desine ducebat. Pati mensis in Alcyone Macareus
-quoque, ense non, in cvrrvs et caedibus, et debueram. Lacessas Serpens caput,
-sorores ademptum, montes nitidum pinu Latinum colebatur ignes.
+It’s been a joy for Nicole to watch her cousin Beth grow into the young woman she is today. Beth attends Indiana University where she is majoring in graphic design. From spending holidays, birthdays, and trips up to the cabin to chatting about art and anime, Nicole and Beth enjoy spending family time together. Nicole admires Beth’s artistic and creative talents, and is so happy that Beth will be able to participate in Nicole and Carl’s special day as a bridesmaid.
 """
 
 

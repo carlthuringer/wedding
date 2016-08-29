@@ -42,7 +42,7 @@ view =
                 , partyMember "Scott McAnally, Groomsman" party.scott scott
                 , partyMember "Dustin Mitchell, Groomsman" party.dustin dustin
                 , partyMember "David Abdemoulie, Groomsman" party.dave david
-                , partyMember "Sarah Killian, Groomsmaid" party.sarah sarah
+                , partyMember "Sarah Beatty, Groomsmaid" party.sarah sarah
                 ]
             ]
         ]

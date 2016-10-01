@@ -1,7 +1,7 @@
 module Components.TravelAndAccomodation exposing (view)
 
 import Html exposing (..)
-import Html.Attributes exposing (..)
+import Html.Attributes exposing (style, width, height, attribute, src, href)
 import Messages exposing (Msg)
 import Update exposing (Model)
 

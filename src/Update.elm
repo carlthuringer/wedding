@@ -44,7 +44,12 @@ update msg model =
                 ( setCountdown, Cmd.none )
 
         RouteTo route ->
-            ( model, pushPath (Routes.doRoute route) )
+            let
+                cmds =
+                    [ pushPath (Routes.doRoute route)
+                    , if route == Routes.RSVPR then Cmd IframeResizeSignal else Cmd.none ]
+            in
+                ( model, batch cmds )
 
         NoOp ->
             ( model, Cmd.none )

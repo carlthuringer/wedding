@@ -13,6 +13,13 @@ app.ports.pushPath.subscribe(function(path) {
   app.ports.path.send(window.location.pathname);
 });
 
+app.ports.rsvpResizer.subscribe(function(rsvpIframeId) {
+  iFrameResize({
+    autoResize: true,
+    heightCalculationMethod: 'max',
+    enablePublicMethods: true
+  }, rsvpIframeId);
+});
 
 function currentTime() { return (new Date()).valueOf(); }
 (function sendTime() {

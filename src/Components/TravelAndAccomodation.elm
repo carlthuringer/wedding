@@ -1,7 +1,7 @@
 module Components.TravelAndAccomodation exposing (view)
 
 import Html exposing (..)
-import Html.Attributes exposing (style, width, height, attribute, src)
+import Html.Attributes exposing (..)
 import Messages exposing (Msg)
 import Update exposing (Model)
 
@@ -34,5 +34,21 @@ view model =
         , h4 [] [ text "Travelers from Michigan:" ]
         , p [] [ text "Take I-75 S to exit 53B to merge onto I-94 W toward Chicago. Take exit 1 for Calumet Avenue toward US-41 N. Merge onto Calumet Avenue. Turn left on to Ridge Road. Destination will be on the right in a quarter of a mile." ]
         , h4 [] [ text "Where to Stay" ]
-        , p [] [ text "A block of hotel rooms will be made close to the Center for Visual and Performing Arts. There will be more details to come once available." ]
+        , p []
+            [ text "The following hotels have blocks of rooms reserved. Shuttle service from the hotels to the venue will be arranged."
+            , ul []
+                [ li []
+                    [ a [ href "http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Cammarata/Thuringer%20Wedding%5Echifh%60ctwctwd%7Cctwctwk%60109.99%60USD%60false%604%606/2/17%606/4/17%605/5/17&app=resvlink&stop_mobi=yes" ] [ text "Fairfield Inn & Suites Hammond" ]
+                    , text " - $109.99 per night or call 219-845-6950"
+                    ]
+                , li []
+                    [ a [ href "http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Cammarata/Thuringer%20Wedding%5Echich%60ctwctwd%7Cctwctwk%60119.99%60USD%60false%605%606/2/17%606/4/17%605/5/17&app=resvlink&stop_mobi=yes" ] [ text "Courtyard by Marriot Hammond" ]
+                    , text " - $119.99 per night or call 219-845-6350"
+                    ]
+                , li []
+                    [ a [ href "http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Cammarata/Thuringer%20Wedding%5Echiin%60ctwctwo%60129.99%60USD%60false%605%606/2/17%606/4/17%605/5/17&app=resvlink&stop_mobi=yes" ] [ text "Residence Inn Hammond" ]
+                    , text " - $129.99 per night or call 219-844-8440"
+                    ]
+                ]
+            ]
         ]

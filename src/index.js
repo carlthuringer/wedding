@@ -14,11 +14,13 @@ app.ports.pushPath.subscribe(function(path) {
 });
 
 app.ports.rsvpResizer.subscribe(function(rsvpIframeId) {
-  iFrameResize({
-    autoResize: true,
-    heightCalculationMethod: 'max',
-    enablePublicMethods: true
-  }, rsvpIframeId);
+  setTimeout(function() {
+    iFrameResize({
+      autoResize: true,
+      heightCalculationMethod: 'max',
+      enablePublicMethods: true
+    }, rsvpIframeId);
+  }, 1000);
 });
 
 function currentTime() { return (new Date()).valueOf(); }

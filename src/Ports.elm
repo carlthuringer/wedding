@@ -1,4 +1,4 @@
-port module Ports exposing (hostClock, pushPath, path)
+port module Ports exposing (hostClock, pushPath, path, rsvpResizer)
 
 port hostClock : (Int -> msg) -> Sub msg
 

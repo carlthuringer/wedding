@@ -38,9 +38,9 @@
       let srcSet = config.sizes.map(function (size) {
         let dest = root('src', 'assets', group, `${base}_${size}.jpg`)
         fs.ensureDirSync(path.dirname(dest))
-        image.clone()
+        let imageResized = image.clone()
           .resize(size)
-        promises.push(image.toFile(dest))
+        promises.push(imageResized.toFile(dest))
 
         return `${path.join('/assets', group, path.basename(dest))} ${size.toString()}w`
       })

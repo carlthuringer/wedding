@@ -3,7 +3,7 @@ module Components.Contact exposing (view)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onInput, targetValue)
-import Http exposing (uriEncode)
+import Http exposing (encodeUri)
 import Messages exposing (Msg, Msg(ContactChange))
 import Update exposing (Model)
 
@@ -34,6 +34,6 @@ mailTo : String -> Attribute a
 mailTo contact =
     let
         body =
-            "body=" ++ uriEncode contact
+            "body=" ++ encodeUri contact
     in
         href ("mailto:wedding-contact@thuringer.us?subject=Contact Form Submission&" ++ body)

@@ -18,49 +18,49 @@ import Navigation exposing (view)
 view : Model -> Html Msg
 view model =
     case model.route of
-        HomeR () ->
+        HomeR ->
             div []
                 [ Home.view model
                 , Navigation.view model
                 ]
 
-        PartyR () ->
+        PartyR ->
             div []
                 [ Navigation.view model
                 , Party.view
                 ]
 
-        TravelAndAccomodationR () ->
+        TravelAndAccomodationR ->
             div []
                 [ Navigation.view model
                 , TravelAndAccomodation.view model
                 ]
 
-        GalleryR () ->
+        GalleryR ->
             div []
                 [ Navigation.view model
                 , Gallery.view
                 ]
 
-        ContactR () ->
+        ContactR ->
             div []
                 [ Navigation.view model
                 , Contact.view model
                 ]
 
-        RSVPR () ->
+        RSVPR ->
             div []
                 [ Navigation.view model
                 , RSVP.view
                 ]
 
-        EventDetailsR () ->
+        EventDetailsR ->
             div []
                 [ Navigation.view model
                 , EventDetails.view
                 ]
 
-        OurStoryR () ->
+        OurStoryR ->
             div []
                 [ Navigation.view model
                 , OurStory.view

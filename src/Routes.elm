@@ -4,15 +4,15 @@ import Route exposing (..)
 
 
 type Sitemap
-    = HomeR ()
-    | PartyR ()
+    = HomeR
+    | PartyR
     | NotFoundR
-    | TravelAndAccomodationR ()
-    | GalleryR ()
-    | ContactR ()
-    | RSVPR ()
-    | EventDetailsR ()
-    | OurStoryR ()
+    | TravelAndAccomodationR
+    | GalleryR
+    | ContactR
+    | RSVPR
+    | EventDetailsR
+    | OurStoryR
 
 
 homeR : Route Sitemap
@@ -69,28 +69,28 @@ match =
 doRoute : Sitemap -> String
 doRoute r =
     case r of
-        HomeR () ->
+        HomeR ->
             reverse homeR []
 
-        PartyR () ->
+        PartyR ->
             reverse partyR []
 
-        TravelAndAccomodationR () ->
+        TravelAndAccomodationR ->
             reverse travelAndAccomodationR []
 
-        GalleryR () ->
+        GalleryR ->
             reverse galleryR []
 
-        ContactR () ->
+        ContactR ->
             reverse contactR []
 
-        RSVPR () ->
+        RSVPR ->
             reverse rsvpR []
 
-        EventDetailsR () ->
+        EventDetailsR ->
             reverse eventDetailsR []
 
-        OurStoryR () ->
+        OurStoryR ->
             reverse ourStoryR []
 
         NotFoundR ->

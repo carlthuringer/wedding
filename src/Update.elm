@@ -22,7 +22,7 @@ type alias Flags =
 
 rsvpifyCmd : Sitemap -> Cmd Msg
 rsvpifyCmd route =
-    if route == Routes.RSVPR () then
+    if route == Routes.RSVPR then
         rsvpResizer "#RSVPifyIFrame"
     else
         Cmd.none
@@ -39,7 +39,7 @@ init { path } =
             }
 
         initCommands =
-            [ Task.perform (\_ -> NoOp) WindowResize (Window.size)
+            [ Task.perform WindowResize (Window.size)
             , rsvpifyCmd (Routes.match path)
             ]
     in

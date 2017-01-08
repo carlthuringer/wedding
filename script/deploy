@@ -1,2 +1,2 @@
 npm run build
-rsync -avz dist/ carl@wedding.thuringer.us:/var/app/wedding/
+aws s3 sync --profile personal dist/ s3://thuringer.us

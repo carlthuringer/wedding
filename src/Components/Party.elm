@@ -8,7 +8,8 @@ import Photos exposing (Photo, toImg, party)
 
 
 filler =
-    ("http://www.fillmurray.com/200/230", "http://www.fillmurray.com/200/230 300w")
+    ( "http://www.fillmurray.com/200/230", "http://www.fillmurray.com/200/230 300w" )
+
 
 view : Html Msg
 view =

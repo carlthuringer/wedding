@@ -15,9 +15,10 @@ main =
         , update = update
         , view = view
         , subscriptions =
-            \_ -> Sub.batch
-                  [ path PathChanged
-                  , hostClock TimeUpdate
-                  , Window.resizes WindowResize
-                  ]
+            \_ ->
+                Sub.batch
+                    [ path PathChanged
+                    , hostClock TimeUpdate
+                    , Window.resizes WindowResize
+                    ]
         }

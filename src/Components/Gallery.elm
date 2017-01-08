@@ -22,4 +22,3 @@ view =
             , toImg engagement.cn85
             ]
         ]
-

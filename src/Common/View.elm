@@ -19,6 +19,6 @@ link currentRoute toRoute label =
         a
             [ href (Routes.doRoute toRoute)
             , onWithOptions "click" opts (Json.succeed <| RouteTo toRoute)
-            , classList [("active", currentRoute == toRoute)]
+            , classList [ ( "active", currentRoute == toRoute ) ]
             ]
             [ text label ]

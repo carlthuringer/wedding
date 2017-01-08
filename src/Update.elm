@@ -7,6 +7,7 @@ import CountDown exposing (init)
 import Messages exposing (Msg(..))
 import Window
 
+
 type alias Model =
     { countDown : CountDown.Model
     , route : Sitemap
@@ -18,12 +19,14 @@ type alias Model =
 type alias Flags =
     { path : String }
 
+
 rsvpifyCmd : Sitemap -> Cmd Msg
 rsvpifyCmd route =
     if route == Routes.RSVPR () then
         rsvpResizer "#RSVPifyIFrame"
     else
         Cmd.none
+
 
 init : Flags -> ( Model, Cmd Msg )
 init { path } =
@@ -37,9 +40,8 @@ init { path } =
 
         initCommands =
             [ Task.perform (\_ -> NoOp) WindowResize (Window.size)
-            , rsvpifyCmd(Routes.match path)
+            , rsvpifyCmd (Routes.match path)
             ]
-
     in
         ( newModel, Cmd.batch initCommands )
 

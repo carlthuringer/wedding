@@ -12,7 +12,7 @@ view : Model -> Html Msg
 view model =
     nav []
         [ ul [ class "flex wrap" ]
-            [ li [ class "pacifico" ] [ link model.route (HomeR ()) "C&N" ]
+            [ li [ class "pacifico" ] [ link model.route (HomeR ()) "N&C" ]
             , li [] [ link model.route (PartyR ()) "Party" ]
             , li [] [ link model.route (TravelAndAccomodationR ()) "Travel and Accomodation" ]
             , li [] [ link model.route (GalleryR ()) "Photo Gallery" ]

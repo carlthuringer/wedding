@@ -27,7 +27,7 @@ rsvpifyEmbedGarbage =
             , attribute "allowtransparency" "true"
             , attribute "frameborder" "0"
             , attribute "scrolling" "no"
-            , src "http://carlandnicole.app.rsvpify.com/?embed=1&amp;js=1"
+            , src "https://carlandnicole.app.rsvpify.com/?embed=1&amp;js=1"
             ]
             []
           -- <iframe id="RSVPifyIFrame" style="width: 100%; border: none; overflow: hidden;" onload="window.parent.scrollTo(0,0)" allowtransparency="true" src="http://carlandnicole.app.rsvpify.com/?embed=1&amp;js=1" frameborder="0" scrolling="no"></iframe>

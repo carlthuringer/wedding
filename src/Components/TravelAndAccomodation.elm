@@ -10,7 +10,7 @@ hotelFairfield : Html Msg
 hotelFairfield =
     let
         uri =
-            "http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Cammarata/Thuringer%20Wedding%5Echiin%60ctwctwo%60129.99%60USD%60false%605%606/1/17%606/4/17%605/5/17&app=resvlink&stop_mobi=yes"
+            "http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Cammarata/Thuringer%20Wedding%5Echifh%60ctwctwd%7Cctwctwk%60109.99%60USD%60false%605%606/1/17%606/4/17%605/5/17&app=resvlink&stop_mobi=yes"
     in
         li []
             [ a [ href uri ]
@@ -36,7 +36,7 @@ hotelResidence : Html Msg
 hotelResidence =
     let
         uri =
-            "http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Cammarata/Thuringer%20Wedding%5Echifh%60ctwctwd%7Cctwctwk%60109.99%60USD%60false%605%606/1/17%606/4/17%605/5/17&app=resvlink&stop_mobi=yes"
+            "http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Cammarata/Thuringer%20Wedding%5Echiin%60ctwctwo%60129.99%60USD%60false%605%606/1/17%606/4/17%605/5/17&app=resvlink&stop_mobi=yes"
     in
         li []
             [ a [ href uri ]

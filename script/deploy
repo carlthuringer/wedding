@@ -1,2 +1,3 @@
-npm run build
+yarn build
 aws s3 sync --profile personal dist/ s3://thuringer.us
+aws --profile personal cloudfront create-invalidation --distribution-id E2JRDISJTFNDDC --paths /index.html

@@ -6,6 +6,45 @@ import Messages exposing (Msg)
 import Update exposing (Model)
 
 
+hotelFairfield : Html Msg
+hotelFairfield =
+    let
+        uri =
+            "http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Cammarata/Thuringer%20Wedding%5Echiin%60ctwctwo%60129.99%60USD%60false%605%606/1/17%606/4/17%605/5/17&app=resvlink&stop_mobi=yes"
+    in
+        li []
+            [ a [ href uri ]
+                [ text "Fairfield Inn & Suites Hammond" ]
+            , text " - $109.99 per night or call 219-845-6950"
+            ]
+
+
+hotelCourtyard : Html Msg
+hotelCourtyard =
+    let
+        uri =
+            "http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Cammarata/Thuringer%20Wedding%5Echich%60ctwctwd%7Cctwctwk%60119.99%60USD%60false%605%606/1/17%606/4/17%605/5/17&app=resvlink&stop_mobi=yes"
+    in
+        li []
+            [ a [ href uri ]
+                [ text "Courtyard by Marriot Hammond" ]
+            , text " - $119.99 per night or call 219-845-6350"
+            ]
+
+
+hotelResidence : Html Msg
+hotelResidence =
+    let
+        uri =
+            "http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Cammarata/Thuringer%20Wedding%5Echifh%60ctwctwd%7Cctwctwk%60109.99%60USD%60false%605%606/1/17%606/4/17%605/5/17&app=resvlink&stop_mobi=yes"
+    in
+        li []
+            [ a [ href uri ]
+                [ text "Residence Inn Hammond" ]
+            , text " - $129.99 per night or call 219-844-8440"
+            ]
+
+
 view : Model -> Html Msg
 view model =
     div []
@@ -36,19 +75,6 @@ view model =
         , h4 [] [ text "Where to Stay" ]
         , p []
             [ text "The following hotels have blocks of rooms reserved. Shuttle service from the hotels to the venue will be arranged."
-            , ul []
-                [ li []
-                    [ a [ href "http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Cammarata/Thuringer%20Wedding%5Echifh%60ctwctwd%7Cctwctwk%60109.99%60USD%60false%604%606/2/17%606/4/17%605/5/17&app=resvlink&stop_mobi=yes" ] [ text "Fairfield Inn & Suites Hammond" ]
-                    , text " - $109.99 per night or call 219-845-6950"
-                    ]
-                , li []
-                    [ a [ href "http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Cammarata/Thuringer%20Wedding%5Echich%60ctwctwd%7Cctwctwk%60119.99%60USD%60false%605%606/2/17%606/4/17%605/5/17&app=resvlink&stop_mobi=yes" ] [ text "Courtyard by Marriot Hammond" ]
-                    , text " - $119.99 per night or call 219-845-6350"
-                    ]
-                , li []
-                    [ a [ href "http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Cammarata/Thuringer%20Wedding%5Echiin%60ctwctwo%60129.99%60USD%60false%605%606/2/17%606/4/17%605/5/17&app=resvlink&stop_mobi=yes" ] [ text "Residence Inn Hammond" ]
-                    , text " - $129.99 per night or call 219-844-8440"
-                    ]
-                ]
+            , ul [] [ hotelFairfield, hotelCourtyard, hotelResidence ]
             ]
         ]

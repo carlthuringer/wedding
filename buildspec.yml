@@ -19,5 +19,4 @@ phases:
     commands:
       - aws s3 sync dist/ s3://thuringer.us
       - aws cloudfront create-invalidation --distribution-id E2JRDISJTFNDDC --paths /index.html
-
       - echo Build completed on `date`

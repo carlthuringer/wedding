@@ -1,0 +1,22 @@
+version: 0.1.0
+phases:
+  install:
+    commands:
+      - npm install -g elm
+      - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+      - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+      - sudo apt-get update && sudo apt-get install yarn
+      - yarn install
+  pre_build:
+    commands:
+      - echo Nothing to do in pre-build...
+  build:
+    commands:
+      - echo Build started on `date`
+      - yarn build
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - dist/

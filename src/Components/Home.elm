@@ -6,7 +6,6 @@ import CountDown exposing (view)
 import Update exposing (Model)
 import Messages exposing (Msg)
 import Photos exposing (toImg, engagement)
-import Markdown exposing (toHtml)
 import Common.View exposing (link)
 import Routes exposing (Sitemap(..))
 
@@ -18,9 +17,7 @@ view model =
         , div [ class "wedding-main center-auto" ]
             [ toImg engagement.cn19 ]
         , p [ class "center-auto" ]
-            [ CountDown.view model.countDown
-            , text " Until they get married!"
-            ]
+            [ CountDown.view model.countDown ]
         , p [ class "center-auto" ]
             [ text "Please "
             , link model.route RSVPR "RSVP"

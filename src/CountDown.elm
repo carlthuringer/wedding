@@ -104,7 +104,7 @@ daysInMonth month =
 
 weddingTime : Date
 weddingTime =
-    Date.fromString "2017-06-03"
+    Date.fromString "2017-06-03T18:00-05:00"
         |> Result.withDefault (Date.fromTime 0)
 
 
@@ -114,9 +114,8 @@ toUnixSeconds date =
         |> Date.toTime
         |> Time.inSeconds
 
-
-view : Model -> Html Msg
-view state =
+calculateTime : Model -> String
+calculateTime state =
     let
         weddingSecs =
             toUnixSeconds weddingTime
@@ -152,4 +151,20 @@ view state =
             |> List.filter (\( a, b ) -> a > 0)
             |> List.concatMap (\( a, b ) -> [ toString a, b ])
             |> String.join " "
-            |> text
+
+view : Model -> Html Msg
+view state =
+    let
+        weddingSecs =
+            toUnixSeconds weddingTime
+
+        nowSecs =
+            toUnixSeconds state.date
+
+        weddingInPast = 
+            nowSecs > weddingSecs
+    in
+        if weddingInPast then
+            text "Were Married June 3, 2017 at 6:00pm!"
+        else
+            text (String.concat [(calculateTime state), " Until they get married!"])

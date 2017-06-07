@@ -28,10 +28,6 @@ var commonConfig = {
   module: {
     rules: [
       {
-        test: /\.(eot|ttf|woff|woff2|svg)$/,
-        use: "file-loader"
-      },
-      {
         test: /\.elm$/,
         exclude: [/elm-stuff/, /node_modules/],
         use: [

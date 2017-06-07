@@ -11,9 +11,12 @@
   },
   "scripts": {
     "start": "webpack-dev-server --hot --inline --content-base src/",
+    "prebuild": "yarn css",
     "build": "rimraf dist && webpack",
     "watch": "webpack --watch",
-    "photos": "node script/photos.js"
+    "photos": "node script/photos.js",
+    "precss": "mkdir -p tmp/css",
+    "css": "elm-css src/Stylesheets.elm -o tmp/css"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^4.0.1",
@@ -31,5 +34,7 @@
     "webpack-dev-server": "^1.14.1",
     "webpack-merge": "^0.14.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "elm-css": "^0.6.0"
+  }
 }

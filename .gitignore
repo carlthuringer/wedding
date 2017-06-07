@@ -35,3 +35,6 @@ TAGS
 
 # Assets
 src/assets
+
+# Temp folder
+tmp

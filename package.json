@@ -20,7 +20,6 @@
     "css-loader": "^0.28.4",
     "elm-hot-loader": "^0.5.4",
     "elm-webpack-loader": "^4.3.1",
-    "file-loader": "^0.9.0",
     "fs-extra": "^0.30.0",
     "html-webpack-plugin": "^2.17.0",
     "lodash": "^4.13.1",
@@ -31,7 +30,6 @@
     "sharp": "^0.16.0",
     "style-loader": "^0.13.1",
     "tmp": "0.0.29",
-    "url-loader": "^0.5.7",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^1.14.1",
     "webpack-merge": "^0.14.1"

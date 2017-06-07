@@ -2,7 +2,6 @@ var path = require("path");
 var webpack = require("webpack");
 var merge = require("webpack-merge");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
-var autoprefixer = require("autoprefixer");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var CopyWebpackPlugin = require("copy-webpack-plugin");
 

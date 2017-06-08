@@ -1,8 +1,9 @@
-module Stylesheets.Main exposing (css, CssClasses(..))
+module Stylesheets.Main exposing (css, CssClasses(..), CssIds(..), cssHelpers)
 
 import Css exposing (..)
-import Css.Elements exposing (body, h1, h2, h3, h4, h5, h6)
+import Css.Elements exposing (body, h1, h2, h3, h4, h5, h6, article, img, nav, ul, li, a)
 import Css.Namespace
+import Html.CssHelpers
 
 
 roseGold : Color
@@ -47,6 +48,23 @@ pinkyCoralSomething =
 
 type CssClasses
     = Pacifico
+    | Flex
+    | Wrap
+    | ThreeColumns
+    | Center
+    | Active
+    | Column
+    | CenterAuto
+    | ContactForm
+
+
+type CssIds
+    = HeadlineImage
+
+
+cssHelpers : Html.CssHelpers.Namespace String class id msg
+cssHelpers =
+    Html.CssHelpers.withNamespace "ncwedding"
 
 
 css : Stylesheet
@@ -64,89 +82,93 @@ css =
             , paddingBottom (Css.rem 0.3)
             , borderBottom3 (px 0.5) solid darkCharcoal
             ]
+        , h1 [ margin2 (Css.rem 1) auto ]
         , class Pacifico
             [ fontFamilies [ "Pacifico", "serif" ]
             , lineHeight (em 1)
+            ]
+        , id HeadlineImage
+            [ width (vw 30) ]
+        , article
+            [ margin4 zero
+                (Css.rem 0.5)
+                (Css.rem 1)
+                (Css.rem 0.5)
+            , descendants
+                [ img
+                    [ float right
+                    , width (Css.rem 17)
+                    ]
+                ]
+            , after
+                [ property "visible" "hidden"
+                , display block
+                , fontSize (px 0)
+                , property "content" " "
+                , property "clear" "both"
+                , height zero
+                ]
+            ]
+        , class Flex
+            [ withClass Wrap [ flexWrap wrap ]
+            , withClass Column [ flexDirection column ]
+            , displayFlex
+            , flex (int 1)
+            , descendants
+                [ class ThreeColumns
+                    [ maxWidth (Css.rem 29)
+                    ]
+                ]
+            , justifyContent spaceAround
+            ]
+        , nav
+            [ descendants
+                [ ul [ padding zero ]
+                , li
+                    [ listStyle none
+                    , margin4 zero (Css.rem 0.1) (Css.rem 0.3) (Css.rem 0.1)
+                    , descendants
+                        [ a [ padding2 zero (Css.rem 0.5) ]
+                        ]
+                    , children
+                        [ class Active
+                            [ property "transition" "2s all"
+                            , backgroundColor pinkyCoralSomething
+                            , color nearlyWhite
+                            ]
+                        ]
+                    ]
+                ]
+            , textTransform uppercase
+            , fontFamilies [ "Open Sans Condensed", "sans-serif" ]
+            ]
+        , class CenterAuto
+            [ textAlign center
+            , marginLeft auto
+            , marginRight auto
+            ]
+        , a
+            [ color pinkyCoralSomething
+            , fontWeight (int 800)
+            , textDecoration none
+            , hover
+                [ textDecoration underline
+                , property "transition" "1s all"
+                , color pinkyCoralSomething
+                ]
+            ]
+        , class ContactForm
+            [ fontSize (pt 16)
+            , width (pct 100)
+            , padding (px 10)
+            , marginBottom (Css.rem 2)
+            , border3 (px 3) solid darkCharcoal
+            , boxSizing borderBox
             ]
         ]
 
 
 
--- .wedding-main img {
---     width: 30vw;
--- }
--- .rose-gold { background-color: $rose_gold }
--- .peach { background-color: $peach }
--- .serenity-blue { background-color: $serenity_blue }
--- .medium-grey { background-color: $medium_grey }
--- article {
---     margin: 0 .5rem 1rem .5rem;
---     img {
---         float: right;
---         width: 17rem;
---     }
---     ::after {
---         visibility: hidden;
---         display: block;
---         font-size: 0;
---         content: " ";
---         clear: both;
---         height: 0;
---     }
--- }
--- .flex {
---     &.wrap { flex-wrap: wrap; }
---     display: flex;
---     flex: 1 0 auto;
---     .three-columns {
---         max-width: 29rem;
---     }
---     justify-content: space-around;
--- }
--- .center {
---     text-align: center;
---     content-justify: center;
--- }
--- nav {
---     ul { padding: 0; }
---     li {
---         list-style: none;
---         margin: 0 .1em .3em .1em;
---         a { padding: 0 .5em; }
---     }
---     text-transform: uppercase;
---     font-family: "Open Sans Condensed", sans-serif;
---     li > .active
---     {
---         transition: 2s all;
---         background-color: $pinkyCoralSomething;
---         color: $nearlyWhite;
---     }
--- }
--- .full {
---     width: 100%;
--- }
--- .column {
---     flex-direction: column;
--- }
--- .center-auto {
---     text-align: center;
---     margin-left: auto;
---     margin-right: auto;
--- }
--- h1 {
---     margin: 1em auto;
--- }
--- a {
---     color: $pinkyCoralSomething;
---     font-weight: 800;
---     text-decoration: none;
---     &:hover {
---         text-decoration: underline;
---         transition: 1s all;
---         color: $pinkyCoralSomething;
---     }
--- }
 -- .contact-form {
 --     font-size: 16pt;
 --     width: 100%;

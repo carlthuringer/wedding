@@ -1,23 +1,21 @@
 module Navigation exposing (view)
 
 import Html exposing (..)
-import Html.Attributes as HtmlA
-import Html.CssHelpers
 import Common.View exposing (link)
 import Routes exposing (Sitemap(..))
 import Messages exposing (Msg)
 import Update exposing (Model)
-import Stylesheets.Main exposing (CssClasses(..))
+import Stylesheets.Main exposing (CssClasses(..), cssHelpers)
 
 
 { id, class, classList } =
-    Html.CssHelpers.withNamespace "main"
+    cssHelpers
 
 
 view : Model -> Html Msg
 view model =
     nav []
-        [ ul [ HtmlA.class "flex wrap" ]
+        [ ul [ class [ Flex, Wrap ] ]
             [ li [ class [ Pacifico ] ] [ link model.route HomeR "N&C" ]
             , li [] [ link model.route PartyR "Party" ]
             , li [] [ link model.route TravelAndAccomodationR "Travel and Accomodation" ]

@@ -10,14 +10,14 @@
     "url": ""
   },
   "scripts": {
-    "start": "concurrently \"yarn dev\" \"yarn css\"",
+    "start": "concurrently \"yarn dev\" \"yarn watchcss\"",
     "dev": "webpack-dev-server --hot --inline --content-base src/",
     "prebuild": "yarn css",
     "build": "rimraf dist && webpack",
-    "watch": "webpack --watch",
     "photos": "node script/photos.js",
     "precss": "mkdir -p tmp/css",
-    "css": "elm-css src/Stylesheets.elm -o tmp/css"
+    "css": "elm-css src/Stylesheets.elm -o tmp/css",
+    "watchcss": "watch \"yarn css\" src/Stylesheets --wait 5"
   },
   "devDependencies": {
     "concurrently": "^3.4.0",
@@ -32,6 +32,7 @@
     "sharp": "^0.18.1",
     "style-loader": "^0.13.1",
     "tmp": "0.0.29",
+    "watch": "^1.0.2",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^1.14.1",
     "webpack-merge": "^0.14.1"

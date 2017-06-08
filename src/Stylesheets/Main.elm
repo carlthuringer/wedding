@@ -1,7 +1,7 @@
-module Stylesheets.Main exposing (css)
+module Stylesheets.Main exposing (css, CssClasses(..))
 
 import Css exposing (..)
-import Css.Elements exposing (body)
+import Css.Elements exposing (body, h1, h2, h3, h4, h5, h6)
 import Css.Namespace
 
 
@@ -45,6 +45,10 @@ pinkyCoralSomething =
     rgb 255 168 148
 
 
+type CssClasses
+    = Pacifico
+
+
 css : Stylesheet
 css =
     (stylesheet << Css.Namespace.namespace "ncwedding")
@@ -52,42 +56,22 @@ css =
             [ color darkCharcoal
             , fontFamilies [ "Open Sans", "sans-serif" ]
             , fontSize (pt 12)
-            , margin2 (px 0) (px 20)
+            , margin2 zero (px 20)
+            ]
+        , each [ h1, h2, h3 ] [ marginBottom (em 0.3) ]
+        , each [ h2, h3, h4, h5, h6 ]
+            [ margin2 (Css.rem 0.3) zero
+            , paddingBottom (Css.rem 0.3)
+            , borderBottom3 (px 0.5) solid darkCharcoal
+            ]
+        , class Pacifico
+            [ fontFamilies [ "Pacifico", "serif" ]
+            , lineHeight (em 1)
             ]
         ]
 
 
 
--- body {
---     color: $darkCharcoal;
---     font-family: 'Open Sans', sans-serif;
---     font-size: 12pt;
---     margin: 0 20px;
--- }
--- h1, h2, h3 {
---     margin-bottom: .3em;
--- }
--- .pacifico {
---     font-family: 'Pacifico', serif;
---     line-height: 1em;
--- }
--- h2, h3, h4, h5, h6 {
---     margin: .3rem 0;
---     padding-bottom: .3em;
---     border-bottom: 0.5px solid $darkCharcoal;
--- }
--- .wedding-colors {
---     $size: 128px;
---     display: flex;
---     flex-flow: row wrap;
---     width: $size * 2;
---     height: auto;
---     div {
---         width: $size;
---         height: $size;
---         margin: auto;
---     }
--- }
 -- .wedding-main img {
 --     width: 30vw;
 -- }

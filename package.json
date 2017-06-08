@@ -10,7 +10,8 @@
     "url": ""
   },
   "scripts": {
-    "start": "webpack-dev-server --hot --inline --content-base src/",
+    "start": "concurrently \"yarn dev\" \"yarn css\"",
+    "dev": "webpack-dev-server --hot --inline --content-base src/",
     "prebuild": "yarn css",
     "build": "rimraf dist && webpack",
     "watch": "webpack --watch",
@@ -19,6 +20,7 @@
     "css": "elm-css src/Stylesheets.elm -o tmp/css"
   },
   "devDependencies": {
+    "concurrently": "^3.4.0",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.4",
     "elm-hot-loader": "^0.5.4",

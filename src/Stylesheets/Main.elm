@@ -193,16 +193,3 @@ css =
                 [ margin2 zero (px 8) ]
             ]
         ]
-
-
-
--- /* Portrait */
--- @media only screen
---     article img {
---         float: initial;
---         width: 100%;
---     }
---     body {
---         margin: 0 8px;
---     }
--- }

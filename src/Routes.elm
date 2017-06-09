@@ -7,11 +7,7 @@ type Sitemap
     = HomeR
     | PartyR
     | NotFoundR
-    | TravelAndAccomodationR
     | GalleryR
-    | ContactR
-    | RSVPR
-    | EventDetailsR
     | OurStoryR
 
 
@@ -25,29 +21,9 @@ partyR =
     PartyR := static "party"
 
 
-travelAndAccomodationR : Route Sitemap
-travelAndAccomodationR =
-    TravelAndAccomodationR := static "travel-and-accomodation"
-
-
 galleryR : Route Sitemap
 galleryR =
     GalleryR := static "gallery"
-
-
-contactR : Route Sitemap
-contactR =
-    ContactR := static "contact"
-
-
-rsvpR : Route Sitemap
-rsvpR =
-    RSVPR := static "rsvp"
-
-
-eventDetailsR : Route Sitemap
-eventDetailsR =
-    EventDetailsR := static "event-details"
 
 
 ourStoryR : Route Sitemap
@@ -57,7 +33,7 @@ ourStoryR =
 
 sitemap : Router Sitemap
 sitemap =
-    router [ homeR, partyR, travelAndAccomodationR, galleryR, contactR, rsvpR, eventDetailsR, ourStoryR ]
+    router [ homeR, partyR, galleryR, ourStoryR ]
 
 
 match : String -> Sitemap
@@ -75,20 +51,8 @@ doRoute r =
         PartyR ->
             reverse partyR []
 
-        TravelAndAccomodationR ->
-            reverse travelAndAccomodationR []
-
         GalleryR ->
             reverse galleryR []
-
-        ContactR ->
-            reverse contactR []
-
-        RSVPR ->
-            reverse rsvpR []
-
-        EventDetailsR ->
-            reverse eventDetailsR []
 
         OurStoryR ->
             reverse ourStoryR []

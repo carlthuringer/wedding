@@ -13,24 +13,3 @@ app.ports.pushPath.subscribe(function(path) {
   window.history.pushState({}, "", path);
   app.ports.path.send(window.location.pathname);
 });
-
-app.ports.rsvpResizer.subscribe(function(rsvpIframeId) {
-  setTimeout(function() {
-    iFrameResize(
-      {
-        autoResize: true,
-        heightCalculationMethod: "max",
-        enablePublicMethods: true
-      },
-      rsvpIframeId
-    );
-  }, 1000);
-});
-
-function currentTime() {
-  return new Date().valueOf();
-}
-(function sendTime() {
-  app.ports.hostClock.send(currentTime());
-  requestAnimationFrame(sendTime);
-})();

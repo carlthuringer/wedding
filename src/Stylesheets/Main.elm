@@ -55,7 +55,7 @@ type CssClasses
     | Active
     | Column
     | CenterAuto
-    | ContactForm
+    | Gallery
 
 
 type CssIds
@@ -88,7 +88,7 @@ css =
             , lineHeight (em 1)
             ]
         , id HeadlineImage
-            [ width (vw 30) ]
+            [ descendants [ img [ width (vw 30) ] ] ]
         , article
             [ margin4 zero
                 (Css.rem 0.5)
@@ -157,52 +157,47 @@ css =
                 , color pinkyCoralSomething
                 ]
             ]
-        , class ContactForm
-            [ fontSize (pt 16)
+        , class Gallery
+            [ displayFlex
+            , flexDirection row
+            , flexWrap wrap
             , width (pct 100)
-            , padding (px 10)
-            , marginBottom (Css.rem 2)
-            , border3 (px 3) solid darkCharcoal
-            , boxSizing borderBox
+            , fontSize (px 0)
+            , justifyContent center
+            , descendants
+                [ img
+                    [ height (vh 80)
+                    , margin2 (px 5) (px 8)
+                    ]
+                ]
+            ]
+        , mediaQuery
+            "only screen and (max-width: 480px)"
+            [ class Gallery
+                [ descendants
+                    [ img
+                        [ height auto
+                        , width (vh 80)
+                        ]
+                    ]
+                ]
+            , article
+                [ descendants
+                    [ img
+                        [ float center
+                        , width (pct 100)
+                        ]
+                    ]
+                ]
+            , body
+                [ margin2 zero (px 8) ]
             ]
         ]
 
 
 
--- .contact-form {
---     font-size: 16pt;
---     width: 100%;
---     padding: 10px;
---     margin-bottom: 2em;
---     border: 3px solid $darkCharcoal;
---     box-sizing: border-box;
--- }
--- .contact-button {
---     margin: .5em 0;
---     padding: .5em;
---     background-color: $pinkyCoralSomething;
---     color: $nearlyWhite;
---     border-radius: 8px;
--- }
--- .gallery {
---     display: flex;
---     flex-direction: row;
---     flex-wrap: wrap;
---     width: 100%;
---     font-size: 0;
---     justify-content: center;
--- }
--- .gallery img {
---     height: 80vh;
---     margin: 5px 8px;
--- }
 -- /* Portrait */
 -- @media only screen
---   and (max-width: 480px) {
---     .gallery img {
---         height: auto;
---         width: 80vh;
---     }
 --     article img {
 --         float: initial;
 --         width: 100%;

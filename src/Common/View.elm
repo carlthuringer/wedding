@@ -1,11 +1,16 @@
 module Common.View exposing (..)
 
 import Html exposing (Html, a, text)
-import Html.Attributes exposing (href, classList)
+import Html.Attributes as HtmlA
 import Html.Events exposing (onWithOptions)
 import Json.Decode as Json
 import Routes exposing (Sitemap)
 import Messages exposing (Msg(RouteTo))
+import Stylesheets.Main exposing (CssClasses(..), cssHelpers)
+
+
+{ id, class, classList } =
+    cssHelpers
 
 
 link : Sitemap -> Sitemap -> String -> Html Msg
@@ -17,8 +22,8 @@ link currentRoute toRoute label =
             }
     in
         a
-            [ href (Routes.doRoute toRoute)
+            [ HtmlA.href (Routes.doRoute toRoute)
             , onWithOptions "click" opts (Json.succeed <| RouteTo toRoute)
-            , classList [ ( "active", currentRoute == toRoute ) ]
+            , classList [ ( Active, currentRoute == toRoute ) ]
             ]
             [ text label ]

@@ -6,7 +6,6 @@ import Window
 
 type Msg
     = NoOp
-    | TimeUpdate Int
     | RouteTo Sitemap
     | PathChanged String
     | ContactChange String

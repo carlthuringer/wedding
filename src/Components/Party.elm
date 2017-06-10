@@ -1,14 +1,14 @@
 module Components.Party exposing (view)
 
 import Html exposing (..)
-import Html.Attributes exposing (..)
 import Markdown exposing (toHtml)
 import Messages exposing (Msg)
 import Photos exposing (Photo, toImg, party)
+import Stylesheets.Main exposing (CssClasses(..), cssHelpers)
 
 
-filler =
-    ( "http://www.fillmurray.com/200/230", "http://www.fillmurray.com/200/230 300w" )
+{ id, class, classList } =
+    cssHelpers
 
 
 view : Html Msg
@@ -18,11 +18,7 @@ view =
         , div []
             [ h2 [] [ text "Bride's Party" ]
             , div
-                [ classList
-                    [ ( "flex", True )
-                    , ( "wrap", True )
-                    ]
-                ]
+                [ class [ Flex, Wrap ] ]
                 [ partyMember "Jill Cammarata, Maid of Honor" party.jill jill
                 , partyMember "Paul Cammarata, Bridesman" party.paul paul
                 , partyMember "Joanna Nichols, Bridesmaid" party.joanna joanna
@@ -34,11 +30,7 @@ view =
         , div []
             [ h2 [] [ text "Groom's Party" ]
             , div
-                [ classList
-                    [ ( "flex", True )
-                    , ( "wrap", True )
-                    ]
-                ]
+                [ class [ Flex, Wrap ] ]
                 [ partyMember "Brian Thuringer, Best Man" party.brian brian
                 , partyMember "Scott McAnally, Groomsman" party.scott scott
                 , partyMember "Dustin Mitchell, Groomsman" party.dustin dustin
@@ -51,7 +43,7 @@ view =
 
 partyMember : String -> Photo -> String -> Html Msg
 partyMember name image content =
-    article [ class "three-columns" ]
+    article [ class [ ThreeColumns ] ]
         [ h3 [] [ text name ]
         , toImg image
         , toHtml [] content

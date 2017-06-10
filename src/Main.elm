@@ -1,10 +1,10 @@
 module Main exposing (..)
 
 import Html
-import Ports exposing (hostClock, path)
+import Ports exposing (path)
 import View exposing (view)
 import Update exposing (Flags, update, init)
-import Messages exposing (Msg(PathChanged, TimeUpdate, WindowResize))
+import Messages exposing (Msg(PathChanged, WindowResize))
 import Window
 
 
@@ -18,7 +18,6 @@ main =
             \_ ->
                 Sub.batch
                     [ path PathChanged
-                    , hostClock TimeUpdate
                     , Window.resizes WindowResize
                     ]
         }

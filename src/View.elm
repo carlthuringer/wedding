@@ -6,11 +6,7 @@ import Update exposing (Model)
 import Messages exposing (Msg)
 import Components.Home as Home
 import Components.Party as Party
-import Components.TravelAndAccomodation as TravelAndAccomodation
 import Components.Gallery as Gallery
-import Components.Contact as Contact
-import Components.RSVP as RSVP
-import Components.EventDetails as EventDetails
 import Components.OurStory as OurStory
 import Navigation exposing (view)
 
@@ -30,34 +26,10 @@ view model =
                 , Party.view
                 ]
 
-        TravelAndAccomodationR ->
-            div []
-                [ Navigation.view model
-                , TravelAndAccomodation.view model
-                ]
-
         GalleryR ->
             div []
                 [ Navigation.view model
                 , Gallery.view
-                ]
-
-        ContactR ->
-            div []
-                [ Navigation.view model
-                , Contact.view model
-                ]
-
-        RSVPR ->
-            div []
-                [ Navigation.view model
-                , RSVP.view
-                ]
-
-        EventDetailsR ->
-            div []
-                [ Navigation.view model
-                , EventDetails.view
                 ]
 
         OurStoryR ->

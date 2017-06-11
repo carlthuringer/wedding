@@ -21,5 +21,5 @@ view model =
             ]
             [ toImg engagement.cn19 ]
         , p [ class [ CenterAuto ] ]
-            [ text "Were Married June 3, 2017 at 6:00pm!" ]
+            [ text "Were Married June 3, 2017 at 5:09pm!" ]
         ]

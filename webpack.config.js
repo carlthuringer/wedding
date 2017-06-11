@@ -28,20 +28,6 @@ var commonConfig = {
   module: {
     rules: [
       {
-        test: /\.elm$/,
-        exclude: [/elm-stuff/, /node_modules/],
-        use: [
-          { loader: "elm-hot-loader" },
-          {
-            loader: "elm-webpack-loader",
-            options: {
-              verbose: true,
-              warn: true
-            }
-          }
-        ]
-      },
-      {
         test: /\.(css)$/,
         use: ["style-loader", "css-loader"]
       }
@@ -78,6 +64,24 @@ if (TARGET_ENV === "development") {
       inline: true,
       progress: true,
       historyApiFallback: true
+    },
+    module: {
+      rules: [
+        {
+          test: /\.elm$/,
+          exclude: [/elm-stuff/, /node_modules/],
+          use: [
+            { loader: "elm-hot-loader" },
+            {
+              loader: "elm-webpack-loader",
+              options: {
+                verbose: true,
+                warn: true
+              }
+            }
+          ]
+        }
+      ]
     }
   });
 }
@@ -94,6 +98,23 @@ if (TARGET_ENV === "production") {
         compressor: { warnings: false }
         // mangle:  true
       })
-    ]
+    ],
+    module: {
+      rules: [
+        {
+          test: /\.elm$/,
+          exclude: [/elm-stuff/, /node_modules/],
+          use: [
+            {
+              loader: "elm-webpack-loader",
+              options: {
+                verbose: false,
+                warn: false
+              }
+            }
+          ]
+        }
+      ]
+    }
   });
 }
